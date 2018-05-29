@@ -17,7 +17,7 @@
         <a href="login.jsp">登录</a>
         <a href="registered.jsp">注册</a>
     </div>
-    <% out.print(1);%>
+    <% out.print(123123);%>
     <!-- nav begin -->
     <nav>
         <div class="Chinese_nav">
