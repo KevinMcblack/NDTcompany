@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e20760a8-a639-4d62-a153-eb12349df269" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AdminBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CarBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/CompanyBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EmployeeBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/EvaluationBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UserBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/OrderBean.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/OrderBean.java" afterDir="false" />
-    </list>
+    <list default="true" id="e20760a8-a639-4d62-a153-eb12349df269" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,16 +76,16 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EvaluationBean.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EvaluationBean.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/EvaluationBean.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+            <state relative-caret-position="247">
+              <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
               <folding>
+                <element signature="e#123#124#0" expanded="true" />
                 <element signature="e#148#149#0" expanded="true" />
                 <element signature="e#181#182#0" expanded="true" />
                 <element signature="e#209#210#0" expanded="true" />
-                <element signature="e#236#237#0" expanded="true" />
                 <element signature="e#262#263#0" expanded="true" />
                 <element signature="e#297#298#0" expanded="true" />
                 <element signature="e#327#328#0" expanded="true" />
@@ -119,6 +110,15 @@
                 <element signature="e#949#950#0" expanded="true" />
                 <element signature="e#981#982#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
             </state>
           </provider>
         </entry>
@@ -370,6 +370,12 @@
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Study\JSP\NDTcompany\web" />
+      <recent name="D:\Study\JSP\NDTcompany\web\css" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -456,7 +462,7 @@
       <option name="presentableId" value="Default" />
       <updated>1527570623441</updated>
       <workItem from="1527570626403" duration="598000" />
-      <workItem from="1527574302466" duration="3019000" />
+      <workItem from="1527574302466" duration="3401000" />
     </task>
     <task id="LOCAL-00001" summary="test">
       <created>1527571094983</created>
@@ -465,14 +471,22 @@
       <option name="project" value="LOCAL" />
       <updated>1527571094983</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="add a lot of JavaBean and login page and register page">
+      <created>1527577612178</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1527577612179</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3617000" />
+    <option name="totallyTimeSpent" value="3999000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -511,7 +525,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="add a lot of JavaBean and login page and register page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add a lot of JavaBean and login page and register page" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/web/index.jsp">
@@ -727,13 +742,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/EvaluationBean.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="5" column="24" selection-start-line="5" selection-start-column="24" selection-end-line="5" selection-end-column="24" />
+        <state relative-caret-position="247">
+          <caret line="13" column="25" lean-forward="true" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
           <folding>
+            <element signature="e#123#124#0" expanded="true" />
             <element signature="e#148#149#0" expanded="true" />
             <element signature="e#181#182#0" expanded="true" />
             <element signature="e#209#210#0" expanded="true" />
-            <element signature="e#236#237#0" expanded="true" />
             <element signature="e#262#263#0" expanded="true" />
             <element signature="e#297#298#0" expanded="true" />
             <element signature="e#327#328#0" expanded="true" />
@@ -758,6 +773,13 @@
             <element signature="e#949#950#0" expanded="true" />
             <element signature="e#981#982#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
         </state>
       </provider>
     </entry>
