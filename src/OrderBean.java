@@ -2,18 +2,34 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class OrderBean {
-    int id,companyID,amount;
-    String departure,destination;
-    Timestamp time,deliveryTime;
-    Date availableTime, availableTime1;
-    double itemSize,price;
+    private int OrderId,companyID,userId,amount;
+    private String departure,destination,state;
+    private Timestamp time,deliveryTime;
+    private Date availableTime, availableTime1;
+    private double itemSize,price;
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public int getOrderId() {
+        return OrderId;
+    }
+
+    public void setOrderId(int orderId) {
+        this.OrderId = orderId;
     }
 
     public int getCompanyID() {

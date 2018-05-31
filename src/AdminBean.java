@@ -1,13 +1,13 @@
 public class AdminBean {
-    int id;
-    String loginName,secret;
+    private int adminId;
+    private String loginName,secret;
 
-    public int getId() {
-        return id;
+    public int getAdminId() {
+        return adminId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setAdminId(int adminId) {
+        this.adminId = adminId;
     }
 
     public String getLoginName() {

@@ -1,13 +1,13 @@
 public class CompanyBean {
-    int id;
-    String secret, companyName,address,email,phone;
+    private int companyId;
+    private String secret, companyName,address,email,phone;
 
-    public int getId() {
-        return id;
+    public int getCompanyId() {
+        return companyId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 
     public String getSecret() {

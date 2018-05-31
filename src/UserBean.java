@@ -1,13 +1,13 @@
 public class UserBean {
-    int id;
-    String loginName,secret,username,phone,sex,email;
+    private int userId;
+    private String loginName,secret,username,phone,sex,email;
 
-    public int getId() {
-        return id;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public String getLoginName() {

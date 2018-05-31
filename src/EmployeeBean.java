@@ -1,13 +1,13 @@
 public class EmployeeBean {
-    int id,companyID;
-    String name,position,phone;//姓名 职位 电话
+    private int employeeId,companyID;
+    private String name,position,phone;//姓名 职位 电话
 
-    public int getId() {
-        return id;
+    public int getEmployeeId() {
+        return employeeId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEmployeeId(int employeeId) {
+        this.employeeId = employeeId;
     }
 
     public int getCompanyID() {

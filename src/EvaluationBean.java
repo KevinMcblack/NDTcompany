@@ -1,38 +1,38 @@
 public class EvaluationBean {
-    int id,uid,cid,oid;
-    String title,content;
-    String[] file;
+    private int evaluationId, userId, companyId, orderId;
+    private String title,content;
+    private String[] file;
 
-    public int getId() {
-        return id;
+    public int getEvaluationId() {
+        return evaluationId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setEvaluationId(int evaluationId) {
+        this.evaluationId = evaluationId;
     }
 
-    public int getUid() {
-        return uid;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setUid(int uid) {
-        this.uid = uid;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
-    public int getCid() {
-        return cid;
+    public int getCompanyId() {
+        return companyId;
     }
 
-    public void setCid(int cid) {
-        this.cid = cid;
+    public void setCompanyId(int companyId) {
+        this.companyId = companyId;
     }
 
-    public int getOid() {
-        return oid;
+    public int getOrderId() {
+        return orderId;
     }
 
-    public void setOid(int oid) {
-        this.oid = oid;
+    public void setOrderId(int orderId) {
+        this.orderId = orderId;
     }
 
     public String getTitle() {

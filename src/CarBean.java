@@ -1,13 +1,13 @@
 public class CarBean {
-    int id,driverID;
-    String kind,number;
+    private int carId,driverID;
+    private String kind,number;
 
-    public int getId() {
-        return id;
+    public int getCarId() {
+        return carId;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setCarId(int carId) {
+        this.carId = carId;
     }
 
     public int getDriverID() {
