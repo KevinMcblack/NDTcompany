@@ -3,6 +3,7 @@
 <html>
 <head>
 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 <link rel="stylesheet" type="text/css" href="css/common.css"/>
 
@@ -52,11 +53,11 @@ span{
 <body>
 <div id="container">
 <div id="nav">
-<span>运输公司信息管理</span><br/>
-<a href="./user/addorder.jsp" target="in">查看订单</a><br/>
-<a href="./user/showcompany.jsp" target="in">查看车辆</a><br/>
-<a href="./user/showcompany.jsp" target="in">查看员工</a><br/>
-<a href="./user/showroder.jsp" target="in">查看公司信息</a><br/>
+<span>用户信息管理</span><br/>
+<a href="./user/addorder.jsp" target="in">发布订单</a><br/>
+<a href="./user/showcompany.jsp" target="in">查看运输公司</a><br/>
+<a href="./user/showroder.jsp" target="in">查看订单</a><br/>
+<a href="./user/showroder.jsp" target="in">查看个人信息</a><br/>
 <a href="./user/showroder.jsp" target="in">修改密码</a><br/>
 </div>
 <div id="frame">

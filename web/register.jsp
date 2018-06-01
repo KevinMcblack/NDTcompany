@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Login/Logout animation concept</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/registered.css">
   </head>
   <body>
   <div class="cont">
@@ -18,8 +18,11 @@
         <div class="login__row">
         <input type="password" class="login__input pass" placeholder="Password"/>
         </div>
-        <button type="button" class="login__submit">Sign in</button>
-        <p class="login__signup">Don't have an account? &nbsp;<a>Sign up</a></p>
+		<div class="login__row">
+        <input type="password" class="login__input pass" placeholder="Password"/>
+        </div>
+        <button type="button" class="login__submit">注册</button>
+		<p class="login__signup">Alreadly have an account &nbsp;<a href="login.jsp">Sign in</a></p>
       </div>
     </div>
     </div>
