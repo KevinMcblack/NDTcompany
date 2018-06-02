@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class CompanyBean {
     private int companyId;
     private String secret, companyName,address,email,phone;

@@ -1,3 +1,5 @@
+package JavaBean;
+
 import java.sql.Timestamp;
 import java.util.Date;
 

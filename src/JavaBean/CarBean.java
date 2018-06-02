@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class CarBean {
     private int carId,driverID;
     private String kind,number;

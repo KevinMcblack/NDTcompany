@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class EvaluationBean {
     private int evaluationId, userId, companyId, orderId;
     private String title,content;

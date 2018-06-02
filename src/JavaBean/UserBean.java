@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class UserBean {
     private int userId;
     private String loginName,secret,username,phone,sex,email;

@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class EmployeeBean {
     private int employeeId,companyID;
     private String name,position,phone;//姓名 职位 电话

@@ -1,3 +1,5 @@
+package JavaBean;
+
 public class AdminBean {
     private int adminId;
     private String loginName,secret;
