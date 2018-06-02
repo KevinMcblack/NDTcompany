@@ -5,6 +5,7 @@
     <title>Login/Logout animation concept</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="stylesheet" href="css/login_register.css" type="text/css">
+    <link rel="stylesheet" href="css/login.css" type="text/css">
 </head>
 <body>
 <div class="cont">
@@ -14,10 +15,10 @@
             <div class="login__form">
                 <form action="Login" method="post">
                     <div class="login__row">
-                        <input type="text" class="login__input name" placeholder="Username/Email" name="username"/>
+                        <input type="text" class="login__input" placeholder="Username" name="username"/>
                     </div>
                     <div class="login__row">
-                        <input type="password" class="login__input pass" placeholder="Password" name="password"/>
+                        <input type="password" class="login__input" placeholder="Password" name="password"/>
                     </div>
                     <br>
                     <input name="kind" type="radio" value="user" />用户&nbsp;
