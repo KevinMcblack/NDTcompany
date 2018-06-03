@@ -1,9 +1,13 @@
 <component name="ProjectDictionaryState">
   <dictionary name="Verge_C">
     <words>
+      <w>availabletime</w>
       <w>companyid</w>
       <w>companyname</w>
+      <w>itemamount</w>
+      <w>itemsize</w>
       <w>loginname</w>
+      <w>orderid</w>
       <w>userid</w>
     </words>
   </dictionary>

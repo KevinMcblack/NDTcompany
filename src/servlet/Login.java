@@ -22,7 +22,6 @@ public class Login extends HttpServlet {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if(password.equals("")||username.equals("")){
-            String a=URLEncoder.encode("用户名或密码不能为空", "UTF-8");
             response.getWriter().print("<script>alert('用户名或密码不能为空');window.location='login.jsp'</script>");
             return;
         }
@@ -36,7 +35,7 @@ public class Login extends HttpServlet {
         if (kind.equals("user")) {
             sql = "select secret,userid from user where loginname='" + username + "'";
         } else {
-            sql = "select secret,companyid from company where companyname='" + username + "'";
+            sql = "select secret,companyid from company where loginname='" + username + "'";
         }
         ResultSet rs = LoginDAO.login(sql);
         System.out.println(rs);
@@ -49,16 +48,13 @@ public class Login extends HttpServlet {
                     System.out.println("kind="+kind);
                     response.sendRedirect(kind + ".jsp");
                 } else {
-                    String a=URLEncoder.encode("密码错误", "UTF-8");
                     response.getWriter().print("<script>alert('密码错误');window.location='login.jsp'</script>");
                 }
             } else{
-                String a=URLEncoder.encode("用户不存在，请先注册", "UTF-8");
                 response.getWriter().print("<script>alert('用户不存在，请先注册'));window.location='login.jsp'</script>");
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            String a=URLEncoder.encode("登录出错，请重试", "UTF-8");
             response.getWriter().print("<script>alert('登录出错，请重试'));window.location='login.jsp'</script>");
         }
     }

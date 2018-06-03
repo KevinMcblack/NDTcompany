@@ -5,7 +5,7 @@ import java.util.Date;
 
 public class OrderBean {
     private int OrderId,companyID,userId,amount;
-    private String departure,destination,state;
+    private String departure,destination, status;
     private Timestamp time,deliveryTime;
     private Date availableTime, availableTime1;
     private double itemSize,price;
@@ -18,12 +18,12 @@ public class OrderBean {
         this.userId = userId;
     }
 
-    public String getState() {
-        return state;
+    public String getStatus() {
+        return status;
     }
 
-    public void setState(String state) {
-        this.state = state;
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getOrderId() {
