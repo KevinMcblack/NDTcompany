@@ -1,15 +1,23 @@
 package JavaBean;
 
 public class CompanyBean {
-    private int companyId;
-    private String secret, companyName,address,email,phone;
+    private int companyid;
+    private String secret, companyname,address,email,phone,loginname;
 
-    public int getCompanyId() {
-        return companyId;
+    public String getLoginname() {
+        return loginname;
     }
 
-    public void setCompanyId(int companyId) {
-        this.companyId = companyId;
+    public void setLoginname(String loginname) {
+        this.loginname = loginname;
+    }
+
+    public int getCompanyid() {
+        return companyid;
+    }
+
+    public void setCompanyid(int companyid) {
+        this.companyid = companyid;
     }
 
     public String getSecret() {
@@ -20,12 +28,12 @@ public class CompanyBean {
         this.secret = secret;
     }
 
-    public String getCompanyName() {
-        return companyName;
+    public String getCompanyname() {
+        return companyname;
     }
 
-    public void setCompanyName(String companyName) {
-        this.companyName = companyName;
+    public void setCompanyname(String companyname) {
+        this.companyname = companyname;
     }
 
     public String getAddress() {

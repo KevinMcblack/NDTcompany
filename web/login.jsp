@@ -21,8 +21,8 @@
                         <input type="password" class="login__input" placeholder="Password" name="password"/>
                     </div>
                     <br>
-                    <input name="kind" type="radio" value="user" />用户&nbsp;
-                    <input name="kind" type="radio" value="company" />运输公司
+                    <input name="kind" type="radio" value="user"/>用户&nbsp;
+                    <input name="kind" type="radio" value="company"/>运输公司
                     <input type="submit" class="login__submit" value="登陆">
                 </form>
                 <p class="login__signup">Don't have an account? &nbsp;<a href="register.jsp">Sign up</a></p>

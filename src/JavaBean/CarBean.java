@@ -1,23 +1,23 @@
 package JavaBean;
 
 public class CarBean {
-    private int carId,driverID;
+    private int carid, driverid;
     private String kind,number;
 
-    public int getCarId() {
-        return carId;
+    public int getCarid() {
+        return carid;
     }
 
-    public void setCarId(int carId) {
-        this.carId = carId;
+    public void setCarid(int carid) {
+        this.carid = carid;
     }
 
-    public int getDriverID() {
-        return driverID;
+    public int getDriverid() {
+        return driverid;
     }
 
-    public void setDriverID(int driverID) {
-        this.driverID = driverID;
+    public void setDriverid(int driverid) {
+        this.driverid = driverid;
     }
 
     public String getKind() {

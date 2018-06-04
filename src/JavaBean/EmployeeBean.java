@@ -1,23 +1,23 @@
 package JavaBean;
 
 public class EmployeeBean {
-    private int employeeId,companyID;
+    private int employeeid, companyid;
     private String name,position,phone;//姓名 职位 电话
 
-    public int getEmployeeId() {
-        return employeeId;
+    public int getEmployeeid() {
+        return employeeid;
     }
 
-    public void setEmployeeId(int employeeId) {
-        this.employeeId = employeeId;
+    public void setEmployeeid(int employeeid) {
+        this.employeeid = employeeid;
     }
 
-    public int getCompanyID() {
-        return companyID;
+    public int getCompanyid() {
+        return companyid;
     }
 
-    public void setCompanyID(int companyID) {
-        this.companyID = companyID;
+    public void setCompanyid(int companyid) {
+        this.companyid = companyid;
     }
 
     public String getName() {
