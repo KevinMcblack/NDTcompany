@@ -31,8 +31,8 @@ public class UpdateEmployee extends HttpServlet {
             employeeBean.setName(name);
             employeeBean.setPhone(phone);
             CompanyDAO companyDAO=new CompanyDAO();
-            companyDAO.updateemployee(employeeBean);
-            out.print("<script>window.location.href='/company/showemployee.jsp';alert('修改成功！')</script>");
+            companyDAO.updateEmployee(employeeBean);
+            out.print("<script>window.location.href='/company/showEmployee.jsp';alert('修改成功！')</script>");
         } catch (Exception e) {
             e.printStackTrace();
         }

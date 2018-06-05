@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CompanyDAO {
+
     public ArrayList<CompanyBean> getAllCompany() {
         String sql = "select * from company";
         DBUtil dbUtil = new DBUtil("ndt");
@@ -95,7 +96,7 @@ public class CompanyDAO {
         return arrayList;
     }
 
-    public void updatecompany(CompanyBean companyBean) {
+    public void updateCompany(CompanyBean companyBean) {
         System.out.println(companyBean.getCompanyid());
         String sql = "update company set loginname='" + companyBean.getLoginname() + "',secret='" + companyBean.getSecret() + "'," +
                 "companyname='" + companyBean.getCompanyname() + "',address='" + companyBean.getAddress() + "',phone='" + companyBean.getPhone() + "'," +
@@ -105,7 +106,7 @@ public class CompanyDAO {
         dbUtil.close();
     }
 
-    public void updateemployee(EmployeeBean employeeBean) {
+    public void updateEmployee(EmployeeBean employeeBean) {
         String sql = "update employee set companyid='" + employeeBean.getCompanyid() + "',name='" + employeeBean.getName() + "'," +
                 "position='" + employeeBean.getPosition() + "',phone='" + employeeBean.getPhone() + "' where employeeid=" + employeeBean.getEmployeeid();
         DBUtil dbUtil = new DBUtil("ndt");
@@ -113,9 +114,25 @@ public class CompanyDAO {
         dbUtil.close();
     }
 
-    public void updatecar(CarBean carBean) {
+    public void updateCar(CarBean carBean) {
         String sql = "update car set carid='" + carBean.getCarid() + "',driverid='" + carBean.getDriverid() + "'," +
                 "kind='" + carBean.getKind() + "',number='" + carBean.getNumber() + "' where carid=" + carBean.getCarid();
+        DBUtil dbUtil = new DBUtil("ndt");
+        dbUtil.update(sql);
+        dbUtil.close();
+    }
+
+    public void insertEmployee(EmployeeBean employeeBean) {
+        String sql = "insert into employee values ('"+employeeBean.getEmployeeid()+"','"+employeeBean.getCompanyid()+"'," +
+                "'"+employeeBean.getName()+"','"+employeeBean.getPosition()+"','"+employeeBean.getPhone()+"')";
+        DBUtil dbUtil = new DBUtil("ndt");
+        dbUtil.update(sql);
+        dbUtil.close();
+    }
+
+    public void insertCar(CarBean carBean) {
+        String sql = "insert into car values (null,'"+carBean.getDriverid()+"'," +
+                "'"+carBean.getKind()+"','"+carBean.getNumber()+"')";
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
         dbUtil.close();

@@ -56,7 +56,7 @@ public class OrderDAO {
             return null;
         }
     }
-    public ArrayList<OrderBean> selectAllOrder(String orderID){
+    public ArrayList<OrderBean> selectAllOrder(){
         ArrayList<OrderBean> arrayList = new ArrayList<>();
         String sql = "select * from order";
         ResultSet resultSet=dbUtil.query(sql);

@@ -30,7 +30,7 @@ $(function(){
 <!--头部-->
 <div class="head_bg">
 	<div class="head clearfix">
-    	<div class="logo"><a href=""><img src="img/index/logo.png" alt=""/></a></div>
+    	<div class="logo"><a href=""><img src="img/index/redlogo.png" alt=""/></a></div>
         <div class="menu">
         	<div class="head_top">
             	<a href="login.jsp">登录</a>
@@ -65,19 +65,10 @@ $(function(){
                     <a target="_blank" href="" style="visibility: visible; display: block;">
                         <img src="img/index/banner.jpg" class="Picture" alt="" /></a>
                     <a style="visibility: hidden; display: none;" target="_blank" href="">
-                       <img src="img/index/32359-106.jpg" class="Picture" alt="" /></a>
+                       <img src="img/index/banner1.jpg" class="Picture" alt="" /></a>
                     <a style="visibility: hidden; display: none;" target="_blank" href="">
-                        <img src="img/index/banner.jpg" class="Picture" alt="" /></a>
-                    <a style="visibility: hidden; display: none;" target="_blank" href="">
-                        <img src="img/index/banner.jpg" class="Picture" alt="" /></a>
-                    <a style="visibility: hidden; display: none;" target="_blank" href="">
-                        <img src="img/index/banner.jpg" class="Picture" alt="" /></a>
-                    <a style="visibility: hidden; display: none;" target="_blank" href="">
-                        <img src="img/index/banner.jpg" class="Picture" alt="" /></a>
+                        <img src="img/index/banner2.jpg" class="Picture" alt="" /></a>
                     <div class="Nav">
-                        <span class="Normal">6</span>
-                        <span class="Normal">5</span>
-                        <span class="Normal">4</span>
                         <span class="Normal">3</span>
                         <span class="Normal">2</span>
                         <span class="Cur">1</span>
@@ -258,7 +249,7 @@ $(function(){
             <a href="">联系我们</a>
         </div>
         <div class="copy">
-        	Copyright&copy;&nbsp;2012-2015&nbsp; 哪都通物流有限责任公司.&nbsp;&nbsp;All&nbsp;&nbsp;rights&nbsp;&nbsp;reserved. &nbsp;&nbsp;粤ICP备10005645
+        	Copyright&copy;&nbsp;1998-2018&nbsp; 哪都通物流有限责任公司.&nbsp;&nbsp;All&nbsp;&nbsp;rights&nbsp;&nbsp;reserved. &nbsp;&nbsp;粤ICP备666666
         </div>
     </div>	
 </div>

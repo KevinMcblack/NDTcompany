@@ -21,16 +21,16 @@ public class UpdateCar extends HttpServlet {
             request.setCharacterEncoding("UTF-8");
             int carid = Integer.parseInt(request.getParameter("carid"));
             int driverid = Integer.parseInt(request.getParameter("driverid"));
-            String kind=request.getParameter("kind");
-            String number=request.getParameter("number");
-            CarBean carBean=new CarBean();
+            String kind = request.getParameter("kind");
+            String number = request.getParameter("number");
+            CarBean carBean = new CarBean();
             carBean.setDriverid(driverid);
             carBean.setCarid(carid);
             carBean.setNumber(number);
             carBean.setKind(kind);
-            CompanyDAO companyDAO=new CompanyDAO();
-            companyDAO.updatecar(carBean);
-            out.print("<script>window.location.href='/company/showcar.jsp';alert('修改成功！')</script>");
+            CompanyDAO companyDAO = new CompanyDAO();
+            companyDAO.updateCar(carBean);
+            out.print("<script>window.location.href='/company/showCar.jsp';alert('修改成功！')</script>");
         } catch (Exception e) {
             e.printStackTrace();
         }

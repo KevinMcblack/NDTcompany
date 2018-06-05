@@ -1,5 +1,5 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <link rel="stylesheet" type="text/css" href="css/common.css"/>
@@ -55,12 +55,12 @@
 <div id="container">
     <div id="nav">
         <span>运输公司信息管理</span><br/>
-        <a href="./showorder.jsp" target="in">查看和操作订单</a><br/>
-        <a href="company/showcar.jsp" target="in">查看和修改车辆</a><br/>
-        <a href="company/addcar.jsp" target="in">增加车辆</a><br/>
-        <a href="company/showemployee.jsp" target="in">查看和修改员工</a><br/>
-        <a href="company/addemployee.jsp" target="in">增加员工</a><br/>
-        <a href="company/showcompany.jsp" target="in">查看和修改公司信息</a><br/>
+        <a href="company//showOrder.jsp" target="in">查看和操作订单</a><br/>
+        <a href="company/showCar.jsp" target="in">查看和修改车辆</a><br/>
+        <a href="company/addCar.jsp" target="in">增加车辆</a><br/>
+        <a href="company/showEmployee.jsp" target="in">查看和修改员工</a><br/>
+        <a href="company/addEmployee.jsp" target="in">增加员工</a><br/>
+        <a href="company/showCompany.jsp" target="in">查看和修改公司信息</a><br/>
     </div>
     <div id="frame">
         <iframe class="s" name="in" width="850px" height="1000px"></iframe>
