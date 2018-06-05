@@ -18,7 +18,6 @@ public class AddEmployee extends HttpServlet {
         response.setCharacterEncoding("GBK");
         PrintWriter out = response.getWriter();
         request.setCharacterEncoding("UTF-8");
-        int employeeid = Integer.parseInt(request.getParameter("employeeid"));
         int compnayid=Integer.parseInt(request.getParameter("companyid"));
         String name=request.getParameter("name");
         String position =request.getParameter("position");
@@ -28,7 +27,6 @@ public class AddEmployee extends HttpServlet {
         employeeBean.setName(name);
         employeeBean.setPosition(position);
         employeeBean.setCompanyid(compnayid);
-        employeeBean.setEmployeeid(employeeid);
         CompanyDAO companyDAO=new CompanyDAO();
         companyDAO.insertEmployee(employeeBean);
         out.print("<script>window.location.href='/company/showEmployee.jsp';alert('添加成功！')</script>");

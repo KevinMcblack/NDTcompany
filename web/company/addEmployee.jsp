@@ -13,7 +13,6 @@
 <body>
     <form method="post" action="AddEmployee">
         <table border="1">
-            <tr><td>员工编号</td><td><input type="text" name="employeeid"></td></tr>
             <tr><td>公司编号</td><td><input type="text" name="companyid"></td></tr>
             <tr><td>员工姓名</td><td><input type="text" name="name"></td></tr>
             <tr><td>员工职位</td><td><input type="text" name="position"></td></tr>

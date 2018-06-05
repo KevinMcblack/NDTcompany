@@ -38,7 +38,7 @@
             <td><input type="text" name="name" value="${ly.name}" size="10"></td>
             <td><input type="text" name="position" value="${ly.position}" size="10"></td>
             <td><input type="text" name="phone" value="${ly.phone}" size="10"></td>
-            <td><input type="submit" value="修改"></td>
+            <td><input type="submit" value="修改"><a href="DeleteEmployee?id=${ly.employeeid}">删除</a></td>
             <td><input type="reset" value="重置"></td>
         </tr>
     </form>

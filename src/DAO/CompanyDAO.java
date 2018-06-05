@@ -123,7 +123,7 @@ public class CompanyDAO {
     }
 
     public void insertEmployee(EmployeeBean employeeBean) {
-        String sql = "insert into employee values ('"+employeeBean.getEmployeeid()+"','"+employeeBean.getCompanyid()+"'," +
+        String sql = "insert into employee values (null,'"+employeeBean.getCompanyid()+"'," +
                 "'"+employeeBean.getName()+"','"+employeeBean.getPosition()+"','"+employeeBean.getPhone()+"')";
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
