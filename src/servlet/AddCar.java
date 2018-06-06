@@ -28,7 +28,7 @@ public class AddCar extends HttpServlet {
         carBean.setDriverid(driverid);
         CompanyDAO companyDAO=new CompanyDAO();
         companyDAO.insertCar(carBean);
-        out.print("<script>window.location.href='/company/addCar.jsp';alert('添加成功！')</script>");
+        out.print("<script>window.location.href='/company/showCar.jsp';alert('添加成功！')</script>");
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

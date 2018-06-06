@@ -36,7 +36,7 @@
                 <td><input type="text" name="driverid" value="${ly.driverid}" size="10"></td>
                 <td><input type="text" name="kind" value="${ly.kind}" size="10"></td>
                 <td><input type="text" name="number" value="${ly.number}" size="10"></td>
-                <td><input type="submit" value="修改"></td>
+                <td><input type="submit" value="修改"><a href="DeleteCar?id=${ly.carid}">删除</a></td>
                 <td><input type="reset" value="重置"></td>
             </tr>
         </form>
