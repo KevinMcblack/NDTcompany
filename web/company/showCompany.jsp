@@ -34,7 +34,7 @@
     <c:forEach items="${arrayList}" var="ly">
     <form method="post" action="UpdateCompany">
         <tr>
-            <td><input type="text" name="companyid" value="${ly.companyid}" size="10"  readOnly="true""></td>
+            <td><input type="text" name="companyid" value="${ly.companyid}" size="10"  readOnly="true"></td>
             <td><input type="text" name="loginname" value="${ly.loginname}" size="10"></td>
             <td><input type="text" name="secret" value="${ly.secret}" size="10"></td>
             <td><input type="text" name="companyname" value="${ly.companyname}" size="10" readOnly="true"></td>

@@ -4,11 +4,30 @@ import java.sql.Timestamp;
 import java.util.Date;
 
 public class OrderBean {
-    private int OrderId,companyID,userId,amount;
-    private String departure,destination, status;
-    private Timestamp time,deliveryTime;
+    private int OrderId,companyID,userId,carId,amount;
+    private String departure;
+    private String destination;
+    private Date finishtime,deliveryTime;
+    private String status;
+    private Timestamp time;
     private Date availableTime, availableTime1;
     private double itemSize,price;
+
+    public Date getFinishtime() {
+        return finishtime;
+    }
+
+    public void setFinishtime(Date finishtime) {
+        this.finishtime = finishtime;
+    }
+
+    public int getCarId() {
+        return carId;
+    }
+
+    public void setCarId(int carId) {
+        this.carId = carId;
+    }
 
     public int getUserId() {
         return userId;
@@ -74,11 +93,11 @@ public class OrderBean {
         this.time = time;
     }
 
-    public Timestamp getDeliveryTime() {
+    public Date getDeliveryTime() {
         return deliveryTime;
     }
 
-    public void setDeliveryTime(Timestamp deliveryTime) {
+    public void setDeliveryTime(Date deliveryTime) {
         this.deliveryTime = deliveryTime;
     }
 

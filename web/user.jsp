@@ -25,6 +25,7 @@
             float: left;
             margin-top: 100px;
             height: 1080px;
+            background-color: #FFFFFF;
         }
 
         span {
@@ -53,9 +54,9 @@
 <div id="container">
     <div id="nav">
         <span>用户信息管理</span><br/>
-        <a href="user/addOrder.jsp" target="in">发布订单</a><br/>
-        <a href="user/showCompany.jsp" target="in">查看运输公司</a><br/>
-        <a href="user/showOrder.jsp" target="in">查看订单</a><br/>
+        <a href="user/chooseCompany.jsp" target="in">发布订单</a><br/>
+        <a href="company/showCompany.jsp" target="in">查看运输公司</a><br/>
+        <a href="ShowOrder" target="in">查看订单</a><br/>
         <a href="user/editPersonalInfo.jsp" target="in">修改个人信息</a><br/>
     </div>
     <div id="frame">
