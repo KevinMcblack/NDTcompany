@@ -1,9 +1,13 @@
 body{
+
 	text-align:center;
 	font-family: Helvetica,STHeiti STXihei,Microsoft JhengHei,Microsoft YaHei,Tohoma,Arial,"微软雅黑","幼圆";
 	font-size:14px;
 	color:#333;
 	background:#F5F5F5;
+}
+.big{
+	/*background-image: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/142996/slider-2.jpg");*/
 }
 .head_bg{
 	width:100%;
@@ -59,9 +63,6 @@ body{
 	font-size:16px;
 	color:#045B95;
 }
-.menu ul li.now , .menu ul li:hover{
-	background:url(../images/menu_now.png) no-repeat center bottom;
-}
 .menu ul li.news{
 	position:relative;
 	width:45px;
@@ -72,7 +73,6 @@ body{
 	height:27px;
 	text-align:center;
 	line-height:23px;
-	background:url(../images/news_icon.png) no-repeat;
 	font-size:12px;
 	color:#F00;
 	position:absolute;
