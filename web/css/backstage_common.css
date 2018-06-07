@@ -1,16 +1,19 @@
 #big {
     width: 1450px;
     margin: 0 auto;
+
+    height: 100%;
 }
 
-#container {
-    margin-top: 100px;
-}
+/*body {
+    background: url("/img/index/background.jpg")  5px 5px;
+}*/
 
 #nav {
     float: left;
     font-family: Georgia, serif;
     font-size: 18px;
+
 }
 
 #frame {
@@ -26,7 +29,7 @@ span {
     height: 50px;
     text-align: center;
     font-weight: bold;
-    line-height:50px;
+    line-height: 50px;
 }
 
 #nav a {
@@ -36,5 +39,5 @@ span {
     display: inline-block;
     background: #FF8F59;
     text-align: center;
-    line-height:50px;
+    line-height: 50px;
 }

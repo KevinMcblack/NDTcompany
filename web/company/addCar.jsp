@@ -8,11 +8,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="AddCar">
-    <table border="1">
+
+<form method="post" action="AddCar" id="form">
+    <table border="1" id="table">
         <tr>
             <td>司机编号</td>
             <td><input type="text" name="driverid"></td>

@@ -11,6 +11,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
 </head>
@@ -19,7 +20,7 @@
     ArrayList<CompanyBean> arrayList = new CompanyDAO().getAllCompany();
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1">
+<table border="1" id="table">
     <tr>
         <th>公司编号</th>
         <th>登录名</th>
