@@ -9,7 +9,34 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CompanyDAO {
-
+    public CompanyBean getCompany(int companyId){
+        CompanyBean companyBean = new CompanyBean();
+        String sql="select * from company where companyid='"+companyId+"'";
+        DBUtil dbUtil  = new DBUtil("ndt");
+        ResultSet rs=dbUtil.query(sql);
+        try {
+            if(rs.next()){
+                int companyid = rs.getInt("companyid");
+                String loginname = rs.getString("loginname");
+                String secret = rs.getString("secret");
+                String companyname = rs.getString("companyname");
+                String address = rs.getString("address");
+                String phone = rs.getString("phone");
+                String email = rs.getString("email");
+                companyBean.setCompanyid(companyid);
+                companyBean.setLoginname(loginname);
+                companyBean.setSecret(secret);
+                companyBean.setCompanyname(companyname);
+                companyBean.setAddress(address);
+                companyBean.setPhone(phone);
+                companyBean.setEmail(email);
+            }
+            return companyBean;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
     public ArrayList<CompanyBean> getAllCompany() {
         String sql = "select * from company";
         DBUtil dbUtil = new DBUtil("ndt");

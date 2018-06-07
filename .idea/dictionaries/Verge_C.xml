@@ -4,6 +4,8 @@
       <w>availabletime</w>
       <w>companyid</w>
       <w>companyname</w>
+      <w>deliverytime</w>
+      <w>finishtime</w>
       <w>itemamount</w>
       <w>itemsize</w>
       <w>loginname</w>

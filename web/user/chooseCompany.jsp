@@ -22,9 +22,9 @@
     <div id="info">
         <form action="addOrder.jsp" method="get">
             <h2>请选择运输公司</h2>
-            <select>
+            <select name="company" title="">
                 <% for(CompanyBean bean:res){%>
-                <option name="company" value="<%= bean.getCompanyid()%>" style="width: 100px"><%= bean.getCompanyname()%></option>
+                <option  value="<%= bean.getCompanyid()%>" style="width: 100px"><%= bean.getCompanyname()%></option>
                 <%}%>
             </select>
             <input type="submit" value="下一步">

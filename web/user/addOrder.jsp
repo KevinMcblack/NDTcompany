@@ -12,18 +12,15 @@
     <link type="text/css" href="../css/showInfo.css" rel="stylesheet">
 </head>
 <body>
+<%
+    System.out.println(request.getParameter("company"));
+    session.setAttribute("companyId",request.getParameter("company"));
+    System.out.println("companyId="+session.getAttribute("companyId"));
+%>
 <div id="show">
     <div id="info">
-        <form action="EditOrder" method="post" id="form">
+        <form action="AddOrder" method="post" id="form">
             <table id="table">
-                <tr>
-                    <td>编号</td>
-                    <td><input type="text" id="id" name="id" title="" value=""></td>
-                </tr>
-                <tr>
-                    <td>接单公司</td>
-                    <td><input type="text" id="companyname" name="companyname" title="" ></td>
-                </tr>
                 <tr>
                     <td>出发地</td>
                     <td><input type="text" id="departure" name="departure" title=""></td>

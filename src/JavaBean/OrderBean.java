@@ -7,17 +7,17 @@ public class OrderBean {
     private int OrderId,companyID,userId,carId,amount;
     private String departure;
     private String destination;
-    private Date finishtime,deliveryTime;
+    private String finishtime,deliveryTime;
     private String status;
     private Timestamp time;
-    private Date availableTime, availableTime1;
+    private String availableTime, availableTime1;
     private double itemSize,price;
 
-    public Date getFinishtime() {
+    public String getFinishtime() {
         return finishtime;
     }
 
-    public void setFinishtime(Date finishtime) {
+    public void setFinishtime(String finishtime) {
         this.finishtime = finishtime;
     }
 
@@ -93,27 +93,27 @@ public class OrderBean {
         this.time = time;
     }
 
-    public Date getDeliveryTime() {
+    public String getDeliveryTime() {
         return deliveryTime;
     }
 
-    public void setDeliveryTime(Date deliveryTime) {
+    public void setDeliveryTime(String deliveryTime) {
         this.deliveryTime = deliveryTime;
     }
 
-    public Date getAvailableTime() {
+    public String getAvailableTime() {
         return availableTime;
     }
 
-    public void setAvailableTime(Date availableTime) {
+    public void setAvailableTime(String availableTime) {
         this.availableTime = availableTime;
     }
 
-    public Date getAvailableTime1() {
+    public String getAvailableTime1() {
         return availableTime1;
     }
 
-    public void setAvailableTime1(Date availableTime1) {
+    public void setAvailableTime1(String availableTime1) {
         this.availableTime1 = availableTime1;
     }
 

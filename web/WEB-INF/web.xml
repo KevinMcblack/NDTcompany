@@ -25,6 +25,22 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>EditOrder</servlet-name>
-        <url-pattern>/EditOrder</url-pattern>
+        <url-pattern>/user/EditOrder</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>AddOrder</servlet-name>
+        <servlet-class>servlet.AddOrder</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddOrder</servlet-name>
+        <url-pattern>/user/AddOrder</url-pattern>
+    </servlet-mapping>
+<servlet>
+    <servlet-name>DeleteOrder</servlet-name>
+    <servlet-class>servlet.DeleteOrder</servlet-class>
+</servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteOrder</servlet-name>
+        <url-pattern>/user/DeleteOrder</url-pattern>
     </servlet-mapping>
 </web-app>

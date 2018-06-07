@@ -21,7 +21,14 @@ public class ShowOrder extends HttpServlet {
         OrderDAO dao = new OrderDAO();
         ArrayList<OrderBean> res=dao.selectAllOrder();
         HttpSession session = request.getSession();
+        int page;
+        if(session.getAttribute("page")==null){
+            session.setAttribute("page",0);
+            page=0;
+        } else {
+            page=Integer.parseInt(session.getAttribute("page").toString());
+        }
         session.setAttribute("res",res);
-        response.sendRedirect("user/showOrder.jsp?page=0");
+        response.sendRedirect("user/showOrder.jsp?page="+page+"");
     }
 }
