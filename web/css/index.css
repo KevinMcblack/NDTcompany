@@ -40,81 +40,6 @@
 	float:right;
 }
 /*盒子1*/
-/*盒子2*/
-.box_2{
-	width:958px;
-	height:143px;
-	margin:0px auto;
-	border:1px solid #999;
-	background:#DFDDDE;
-}
-.tabBox_t , .tabBox  {
-	width:958px;
-	text-align:left;
-}
-.tabBox .tabNav {
-	overflow: hidden;
-	margin: 0px;
-	padding:0px;
-	width: 958px;
-	list-style:none;
-	text-align:left;
-}
-.tabBox .tabNav li {
-	float: left;
-	border: 1px solid #999;
-	border-top: none;
-	border-left:none;
-	width:85px;
-	height: 35px;
-	line-height: 35px;
-	text-align: center;
-	cursor: pointer;
-	font-size: 16px;
-	color:#045B95;
-}
-.tabBox .tabNav li.now {
-	border-bottom:none;
-	color:#333;
-}
-.tabBox .tabCont {
-	display: none;
-	height:105px;
-	font-size:16px;
-	padding-left:20px;
-}
-.tabBox .tabCont .ctn{
-	padding-top:25px;
-	height:40px;
-	line-height:40px;
-}
-.tabCont span{
-	margin-right:5px;
-}
-.tabCont input{
-	width:220px;
-	height:40px;
-	line-height:40px;
-	padding-left:5px;
-	font-size:14px;
-	border:none;
-	margin-right:20px;
-	vertical-align:middle;
-}
-.tabCont a{
-	display:inline-block;
-	*display:inline;
-	zoom:1;
-	width:120px;
-	height:40px;
-	line-height:40px;
-	text-align:center;
-	background:#0C5B9D;
-	font-size:16px;
-	color:#FFF;
-	vertical-align:middle;
-}
-/*盒子2*/
 /*盒子3*/
 .box_3{
 	width:960px;
@@ -201,7 +126,7 @@
 }
 .box16 ul {
 	width: 435px;
-	height:210;
+	height:210px;
 	overflow: hidden;
 }
 .box16 ul li {

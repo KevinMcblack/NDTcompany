@@ -150,16 +150,16 @@ public class CompanyDAO {
     }
 
     public void insertEmployee(EmployeeBean employeeBean) {
-        String sql = "insert into employee values (null,'"+employeeBean.getCompanyid()+"'," +
-                "'"+employeeBean.getName()+"','"+employeeBean.getPosition()+"','"+employeeBean.getPhone()+"')";
+        String sql = "insert into employee values (null,'" + employeeBean.getCompanyid() + "'," +
+                "'" + employeeBean.getName() + "','" + employeeBean.getPosition() + "','" + employeeBean.getPhone() + "')";
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
         dbUtil.close();
     }
 
     public void insertCar(CarBean carBean) {
-        String sql = "insert into car values (null,'"+carBean.getDriverid()+"'," +
-                "'"+carBean.getKind()+"','"+carBean.getNumber()+"')";
+        String sql = "insert into car values (null,'" + carBean.getDriverid() + "'," +
+                "'" + carBean.getKind() + "','" + carBean.getNumber() + "')";
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
         dbUtil.close();

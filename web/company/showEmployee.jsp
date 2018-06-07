@@ -12,6 +12,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Title</title>
 </head>
@@ -20,7 +21,7 @@
     ArrayList<EmployeeBean> arrayList = new CompanyDAO().getAllEmployee();
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1">
+<table border="1" id="table">
     <tr>
         <th>员工编号</th>
         <th>公司编号</th>
@@ -31,17 +32,21 @@
         <th>重置</th>
     </tr>
     <c:forEach items="${arrayList}" var="ly">
-    <form method="post" action="UpdateEmployee">
-        <tr>
-            <td><input type="text" name="employeeid" value="${ly.employeeid}" size="10"></td>
-            <td><input type="text" name="companyid" value="${ly.companyid}" size="10" readOnly="true"></td>
-            <td><input type="text" name="name" value="${ly.name}" size="10"></td>
-            <td><input type="text" name="position" value="${ly.position}" size="10"></td>
-            <td><input type="text" name="phone" value="${ly.phone}" size="10"></td>
-            <td><input type="submit" value="修改"><a href="DeleteEmployee?id=${ly.employeeid}">删除</a></td>
-            <td><input type="reset" value="重置"></td>
-        </tr>
-    </form>
+        <form method="post" action="UpdateEmployee">
+            <tr>
+                <td><input type="text" name="employeeid" value="${ly.employeeid}" size="10"></td>
+                <td><input type="text" name="companyid" value="${ly.companyid}" size="10" readOnly="true"></td>
+                <td><input type="text" name="name" value="${ly.name}" size="10"></td>
+                <td><input type="text" name="position" value="${ly.position}" size="10"></td>
+                <td><input type="text" name="phone" value="${ly.phone}" size="10"></td>
+                <td><input type="submit" value="修改">
+                    <input type="button"
+                           onclick="window.location.href('DeleteEmployee?id=${ly.employeeid}')"
+                           value="删除">
+                </td>
+                <td><input type="reset" value="重置"></td>
+            </tr>
+        </form>
     </c:forEach>
 </table>
 </body>
