@@ -103,7 +103,8 @@
         </form>
         <input type="button" onclick="editable()" value="修改订单">
         <input type="button" onclick="deleteable()" value="删除订单">
-        <input type="button" onclick="window.location.href='EditOrder?id=${b.orderId}&code=2'" value="确认收货" style="display: none" id="finish"><br><br>
+        <input type="button" onclick="window.location.href='EditOrder?id=${b.orderId}&code=2'" value="确认收货" style="display: none" id="finish">
+        <input type="button" onclick="window.location.href='../evaluation/addEvaluation.jsp?orderid=${b.orderId}&companyid=${b.companyID}'" value="确认收货" style="display: none" id="evaluation"><br><br>
         <input type="button" onclick="window.location='showOrder.jsp?page=${page-1}'" value="上一单" id="left">
         <input type="button" onclick="window.location='showOrder.jsp?page=${page+1}'" value="下一单" id="right">
     </div>
@@ -137,6 +138,10 @@
     if(status=="已送达"){
         var submit = document.getElementById("finish");
         submit.style.display="inline";
+    }
+    if(status=="已完成"){
+        var evaluation = document.getElementById("evaluation");
+        evaluation.style.display="inline";
     }
     if (!${page}) {
         var left=document.getElementById("left");
