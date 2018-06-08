@@ -11,6 +11,8 @@
         <servlet-name>Login</servlet-name>
         <url-pattern>/Login</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>ShowOrder</servlet-name>
         <servlet-class>servlet.ShowOrder</servlet-class>
@@ -19,6 +21,8 @@
         <servlet-name>ShowOrder</servlet-name>
         <url-pattern>/ShowOrder</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>EditOrder</servlet-name>
         <servlet-class>servlet.EditOrder</servlet-class>
@@ -27,6 +31,8 @@
         <servlet-name>EditOrder</servlet-name>
         <url-pattern>/user/EditOrder</url-pattern>
     </servlet-mapping>
+
+
     <servlet>
         <servlet-name>AddOrder</servlet-name>
         <servlet-class>servlet.AddOrder</servlet-class>
@@ -35,12 +41,33 @@
         <servlet-name>AddOrder</servlet-name>
         <url-pattern>/user/AddOrder</url-pattern>
     </servlet-mapping>
-<servlet>
-    <servlet-name>DeleteOrder</servlet-name>
-    <servlet-class>servlet.DeleteOrder</servlet-class>
-</servlet>
+
+
+    <servlet>
+        <servlet-name>DeleteOrder</servlet-name>
+        <servlet-class>servlet.DeleteOrder</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DeleteOrder</servlet-name>
         <url-pattern>/user/DeleteOrder</url-pattern>
+    </servlet-mapping>
+
+
+    <servlet>
+        <servlet-name>EditUser</servlet-name>
+        <servlet-class>servlet.EditUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>EditUser</servlet-name>
+        <url-pattern>/user/EditUser</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ShowUser</servlet-name>
+        <servlet-class>servlet.ShowUser</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ShowUser</servlet-name>
+        <url-pattern>/ShowUser</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -9,11 +9,6 @@ import java.util.ArrayList;
 public class OrderDAO {
     private DBUtil dbUtil;
 
-    public void insertOrder(String sql){
-        dbUtil = new DBUtil("ndt");
-        dbUtil.update(sql);
-        dbUtil.close();
-    }
     private OrderBean addBean(ResultSet resultSet){
         OrderBean bean = new OrderBean();
         try {
@@ -74,12 +69,6 @@ public class OrderDAO {
             e.printStackTrace();
             return null;
         }
-    }
-
-    public void deleteOrder(String sql){
-        dbUtil = new DBUtil("ndt");
-        dbUtil.update(sql);
-        dbUtil.close();
     }
 
     public void updateOrder(String sql){

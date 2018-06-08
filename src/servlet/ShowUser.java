@@ -1,17 +1,18 @@
 package servlet;
 
-import DAO.OrderDAO;
-import com.sun.org.apache.xpath.internal.operations.Or;
+import DAO.UserDAO;
+import JavaBean.UserBean;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet(name = "DeleteOrder")
-public class DeleteOrder extends HttpServlet {
+
+public class ShowUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
@@ -20,12 +21,12 @@ public class DeleteOrder extends HttpServlet {
         response.setHeader("content-type", "text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String id=request.getParameter("id");
-        String sql = "delete from `order` where orderid='"+id+"'";
-        OrderDAO dao = new OrderDAO();
-        dao.updateOrder(sql);
-        request.getSession().setAttribute("page",0);
-        response.getWriter().print("<script>alert('删除订单成功');</script>");
-//        request.getRequestDispatcher("/ShowOrder").forward(request, response);
+        HttpSession session = request.getSession();
+        String id = session.getAttribute("id").toString();
+        String sql = "select * from user where userid='"+id+"'";
+        UserDAO dao = new UserDAO();
+        UserBean bean=dao.queryUser(sql);
+        session.setAttribute("tempUserBean",bean);
+        response.sendRedirect("/user/editPersonalInfo.jsp");
     }
 }

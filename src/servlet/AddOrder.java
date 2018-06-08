@@ -34,7 +34,7 @@ public class AddOrder extends HttpServlet {
         OrderDAO dao = new OrderDAO();
         String sql = "insert into `order` (userid,companyid,departure,destination,itemamount,itemsize,status,availabletime,availabletime1) values"+
                 "('"+userId+"','"+companyId+"','"+departure+"','"+destination+"','"+amount+"','"+size+"','"+status+"','"+time+"','"+time1+"')";
-        dao.insertOrder(sql);
+        dao.updateOrder(sql);
         response.getWriter().print("<script>alert('生成订单成功');</script>");
     }
 
