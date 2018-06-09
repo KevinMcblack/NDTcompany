@@ -20,6 +20,7 @@
     <servlet-mapping>
         <servlet-name>ShowOrder</servlet-name>
         <url-pattern>/ShowOrder</url-pattern>
+        <url-pattern>/user/ShowOrder</url-pattern>
     </servlet-mapping>
 
 

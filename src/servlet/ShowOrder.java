@@ -28,6 +28,7 @@ public class ShowOrder extends HttpServlet {
         } else {
             page=Integer.parseInt(session.getAttribute("page").toString());
         }
+        System.out.println("page = " + page);
         session.setAttribute("res",res);
         response.sendRedirect("user/showOrder.jsp?page="+page+"");
     }

@@ -19,20 +19,10 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.5" level="application_server_libraries" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="file://$MODULE_DIR$/web/plugins/lib" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-        <jarDirectory url="file://$MODULE_DIR$/web/plugins/lib" recursive="false" />
-      </library>
-    </orderEntry>
     <orderEntry type="library" name="jspsmartupload_zh" level="project" />
     <orderEntry type="library" name="jstl" level="project" />
     <orderEntry type="library" name="mysql-connector-java-5.1.46" level="project" />
     <orderEntry type="library" name="standard" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Tomcat 9.0.8" level="application_server_libraries" />
   </component>
 </module>

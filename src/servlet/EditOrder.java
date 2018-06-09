@@ -14,10 +14,6 @@ import java.util.Date;
 
 public class EditOrder extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("content-type", "text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -40,7 +36,7 @@ public class EditOrder extends HttpServlet {
                 dao.updateOrder(sql);
                 session.setAttribute("page",page);
                 response.getWriter().print("<script>alert('修改订单成功');</script>");
-                request.getRequestDispatcher("/ShowOrder").forward(request, response);
+                response.sendRedirect("../ShowOrder");
             } else if(code == 2){
                 String status = "已完成";
                 String sql = "update `order` set status = '"+status+"' where orderid='"+id+"'";
@@ -68,5 +64,9 @@ public class EditOrder extends HttpServlet {
 
             }
         }
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
     }
 }
