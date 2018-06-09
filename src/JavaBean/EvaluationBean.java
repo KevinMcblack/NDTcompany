@@ -1,9 +1,12 @@
 package JavaBean;
 
+import java.util.Date;
+
 public class EvaluationBean {
     private int evaluationId, userId, companyId, orderId;
     private String title,content;
-    private String[] file;
+    private Date time;
+    private String photo1;
 
     public int getEvaluationId() {
         return evaluationId;
@@ -53,11 +56,11 @@ public class EvaluationBean {
         this.content = content;
     }
 
-    public String[] getFile() {
-        return file;
-    }
+    public Date getTime() { return time; }
 
-    public void setFile(String[] file) {
-        this.file = file;
-    }
+    public void setTime(Date time) { this.time = time; }
+
+    public String getPhoto1() { return photo1; }
+
+    public void setPhoto1(String photo1) { this.photo1 = photo1; }
 }
