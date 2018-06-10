@@ -18,13 +18,12 @@
 </head>
 <body>
 <%
-    ArrayList<EmployeeBean> arrayList = new CompanyDAO().getAllEmployee();
+    ArrayList<EmployeeBean> arrayList = new CompanyDAO().getCompanyEmployee((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
 <table border="1" id="table">
     <tr>
         <th>员工编号</th>
-        <th>公司编号</th>
         <th>员工姓名</th>
         <th>员工职位</th>
         <th>员工电话</th>
@@ -35,13 +34,12 @@
         <form method="post" action="UpdateEmployee">
             <tr>
                 <td><input type="text" name="employeeid" value="${ly.employeeid}" size="10"></td>
-                <td><input type="text" name="companyid" value="${ly.companyid}" size="10" readOnly="true"></td>
                 <td><input type="text" name="name" value="${ly.name}" size="10"></td>
                 <td><input type="text" name="position" value="${ly.position}" size="10"></td>
                 <td><input type="text" name="phone" value="${ly.phone}" size="10"></td>
                 <td><input type="submit" value="修改">
                     <input type="button"
-                           onclick="window.location.href('DeleteEmployee?id=${ly.employeeid}')"
+                           onclick="window.location.href='DeleteEmployee?id=${ly.employeeid}'"
                            value="删除">
                 </td>
                 <td><input type="reset" value="重置"></td>

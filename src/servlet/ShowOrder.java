@@ -19,16 +19,25 @@ public class ShowOrder extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         OrderDAO dao = new OrderDAO();
-        ArrayList<OrderBean> res=dao.selectAllOrder();
         HttpSession session = request.getSession();
-        int page;
-        if(session.getAttribute("page")==null){
-            session.setAttribute("page",0);
-            page=0;
+        ArrayList<OrderBean> res;
+        if (session.getAttribute("companyid") == null) {
+            res = dao.selectUserOrder((int)session.getAttribute("userid"));
         } else {
-            page=Integer.parseInt(session.getAttribute("page").toString());
+            res = dao.selectCompanyOrder((int)session.getAttribute("companyid"));
         }
-        session.setAttribute("res",res);
-        response.sendRedirect("user/showOrder.jsp?page="+page+"");
+        int page;
+        if (session.getAttribute("page") == null) {
+            session.setAttribute("page", 0);
+            page = 0;
+        } else {
+            page = Integer.parseInt(session.getAttribute("page").toString());
+        }
+        session.setAttribute("res", res);
+        if (session.getAttribute("companyid") == null) {
+            response.sendRedirect("user/showOrder.jsp?page=" + page + "");
+        } else {
+            response.sendRedirect("company/showOrder.jsp?page=" + page + "");
+        }
     }
 }

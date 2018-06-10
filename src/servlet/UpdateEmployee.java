@@ -20,13 +20,11 @@ public class UpdateEmployee extends HttpServlet {
             PrintWriter out = response.getWriter();
             request.setCharacterEncoding("UTF-8");
             int employeeid = Integer.parseInt(request.getParameter("employeeid"));
-            int companyid = Integer.parseInt(request.getParameter("companyid"));
             String name = request.getParameter("name");
             String position = request.getParameter("position");
             String phone = request.getParameter("phone");
             EmployeeBean employeeBean=new EmployeeBean();
             employeeBean.setEmployeeid(employeeid);
-            employeeBean.setCompanyid(companyid);
             employeeBean.setPosition(position);
             employeeBean.setName(name);
             employeeBean.setPhone(phone);

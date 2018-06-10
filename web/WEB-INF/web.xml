@@ -29,9 +29,10 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>EditOrder</servlet-name>
+        <url-pattern>/company/EditOrder</url-pattern>
         <url-pattern>/user/EditOrder</url-pattern>
-    </servlet-mapping>
 
+    </servlet-mapping>
 
     <servlet>
         <servlet-name>AddOrder</servlet-name>

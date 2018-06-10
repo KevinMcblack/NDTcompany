@@ -22,7 +22,7 @@ public class ShowUser extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        String id = session.getAttribute("id").toString();
+        String id = session.getAttribute("userid").toString();
         String sql = "select * from user where userid='"+id+"'";
         UserDAO dao = new UserDAO();
         UserBean bean=dao.queryUser(sql);

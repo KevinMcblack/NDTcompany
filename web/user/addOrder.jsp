@@ -14,8 +14,8 @@
 <body>
 <%
     System.out.println(request.getParameter("company"));
-    session.setAttribute("companyId",request.getParameter("company"));
-    System.out.println("companyId="+session.getAttribute("companyId"));
+    session.setAttribute("companyId", request.getParameter("company"));
+    System.out.println("companyId=" + session.getAttribute("companyId"));
 %>
 <div id="show">
     <div id="info">
@@ -31,15 +31,17 @@
                 </tr>
                 <tr>
                     <td>货物数量</td>
-                    <td><input type="text" name="amount" title="" ></td>
+                    <td><input type="text" name="amount" title=""></td>
                 </tr>
                 <tr>
                     <td>货物重量</td>
-                    <td><input type="text" name="itemSize" title="" ></td>
+                    <td><input type="text" name="itemSize" title=""></td>
                 </tr>
                 <tr>
                     <td>期望取件时间</td>
-                    <td><input type="datetime-local" name="availableTime" title="" >~<input type="datetime-local" name="availableTime1" title="" ></td>
+                    <td><input type="datetime-local" name="availableTime" title="">~<input type="datetime-local"
+                                                                                           name="availableTime1"
+                                                                                           title=""></td>
                 </tr>
             </table>
             <input type="submit" value="提交" id="submit">

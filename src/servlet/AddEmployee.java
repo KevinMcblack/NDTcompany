@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -18,7 +19,8 @@ public class AddEmployee extends HttpServlet {
         response.setCharacterEncoding("GBK");
         PrintWriter out = response.getWriter();
         request.setCharacterEncoding("UTF-8");
-        int compnayid=Integer.parseInt(request.getParameter("companyid"));
+        HttpSession session = request.getSession();
+        int compnayid= (int) session.getAttribute("companyid");
         String name=request.getParameter("name");
         String position =request.getParameter("position");
         String phone=request.getParameter("phone");

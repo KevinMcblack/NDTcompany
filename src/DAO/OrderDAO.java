@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class OrderDAO {
     private DBUtil dbUtil;
 
-    private OrderBean addBean(ResultSet resultSet){
+    private OrderBean addBean(ResultSet resultSet) {
         OrderBean bean = new OrderBean();
         try {
             bean.setOrderId(resultSet.getInt(1));
@@ -34,11 +34,11 @@ public class OrderDAO {
         }
     }
 
-    public OrderBean selectOrder(String sql){
+    public OrderBean selectOrder(String sql) {
         dbUtil = new DBUtil("ndt");
-        ResultSet resultSet=dbUtil.query(sql);
+        ResultSet resultSet = dbUtil.query(sql);
         try {
-            if(resultSet.next()){
+            if (resultSet.next()) {
                 OrderBean bean = addBean(resultSet);
                 resultSet.close();
                 dbUtil.close();
@@ -52,26 +52,36 @@ public class OrderDAO {
         }
     }
 
-    public ArrayList<OrderBean> selectAllOrder(){
-        dbUtil = new DBUtil("ndt");
+    private ArrayList<OrderBean> init(String sql){
         ArrayList<OrderBean> arrayList = new ArrayList<>();
-        String sql = "select * from `order`";
-        ResultSet resultSet=dbUtil.query(sql);
+        ResultSet resultSet = dbUtil.query(sql);
         try {
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 OrderBean bean = addBean(resultSet);
                 arrayList.add(bean);
             }
             resultSet.close();
             dbUtil.close();
             return arrayList;
-        } catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
             return null;
         }
     }
 
-    public void updateOrder(String sql){
+    public ArrayList<OrderBean> selectUserOrder(int userid) {
+        dbUtil = new DBUtil("ndt");
+        String sql = "select * from `order` where userid=" + userid;
+        return init(sql);
+    }
+
+    public ArrayList<OrderBean> selectCompanyOrder(int companyid) {
+        dbUtil = new DBUtil("ndt");
+        String sql = "select * from `order` where companyid=" + companyid;
+        return init(sql);
+    }
+
+    public void updateOrder(String sql) {
         dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
         dbUtil.close();

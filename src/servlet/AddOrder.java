@@ -20,7 +20,7 @@ public class AddOrder extends HttpServlet {
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
-        int userId = (Integer)session.getAttribute("id");
+        int userId = (Integer)session.getAttribute("userid");
         int companyId = Integer.parseInt(session.getAttribute("companyId").toString());
         String departure = request.getParameter("departure");
         String destination = request.getParameter("destination");

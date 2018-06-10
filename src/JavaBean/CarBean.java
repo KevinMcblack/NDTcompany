@@ -1,8 +1,18 @@
 package JavaBean;
 
 public class CarBean {
-    private int carid, driverid;
-    private String kind,number;
+
+
+    private int carid, driverid, companyid;
+    private String kind, number;
+
+    public int getCompanyid() {
+        return companyid;
+    }
+
+    public void setCompanyid(int companyid) {
+        this.companyid = companyid;
+    }
 
     public int getCarid() {
         return carid;

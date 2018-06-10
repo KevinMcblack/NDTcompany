@@ -9,13 +9,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CompanyDAO {
-    public CompanyBean getCompany(int companyId){
+    public CompanyBean getCompany(int companyId) {
         CompanyBean companyBean = new CompanyBean();
-        String sql="select * from company where companyid='"+companyId+"'";
-        DBUtil dbUtil  = new DBUtil("ndt");
-        ResultSet rs=dbUtil.query(sql);
+        String sql = "select * from company where companyid='" + companyId + "'";
+        DBUtil dbUtil = new DBUtil("ndt");
+        ResultSet rs = dbUtil.query(sql);
         try {
-            if(rs.next()){
+            if (rs.next()) {
                 int companyid = rs.getInt("companyid");
                 String loginname = rs.getString("loginname");
                 String secret = rs.getString("secret");
@@ -37,6 +37,7 @@ public class CompanyDAO {
             return null;
         }
     }
+
     public ArrayList<CompanyBean> getAllCompany() {
         String sql = "select * from company";
         DBUtil dbUtil = new DBUtil("ndt");
@@ -69,15 +70,14 @@ public class CompanyDAO {
         return arrayList;
     }
 
-    public ArrayList<EmployeeBean> getAllEmployee() {
-        String sql = "select * from employee";
+    public ArrayList<EmployeeBean> getCompanyEmployee(int companyid) {
+        String sql = "select * from employee where companyid=" + companyid;
         DBUtil dbUtil = new DBUtil("ndt");
         ResultSet rs = dbUtil.query(sql);
         ArrayList<EmployeeBean> arrayList = new ArrayList<>();
         try {
             while (rs.next()) {
                 EmployeeBean employeeBean = new EmployeeBean();
-                int companyid = rs.getInt("companyid");
                 int employeeid = rs.getInt("employeeid");
                 String name = rs.getString("name");
                 String position = rs.getString("position");
@@ -97,8 +97,8 @@ public class CompanyDAO {
         return arrayList;
     }
 
-    public ArrayList<CarBean> getAllCar() {
-        String sql = "select * from car";
+    public ArrayList<CarBean> getCompanyCar(int companyid) {
+        String sql = "select * from car where companyid=" + companyid;
         DBUtil dbUtil = new DBUtil("ndt");
         ResultSet rs = dbUtil.query(sql);
         ArrayList<CarBean> arrayList = new ArrayList<>();
@@ -134,7 +134,7 @@ public class CompanyDAO {
     }
 
     public void updateEmployee(EmployeeBean employeeBean) {
-        String sql = "update employee set companyid='" + employeeBean.getCompanyid() + "',name='" + employeeBean.getName() + "'," +
+        String sql = "update employee set name='" + employeeBean.getName() + "'," +
                 "position='" + employeeBean.getPosition() + "',phone='" + employeeBean.getPhone() + "' where employeeid=" + employeeBean.getEmployeeid();
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
@@ -158,8 +158,8 @@ public class CompanyDAO {
     }
 
     public void insertCar(CarBean carBean) {
-        String sql = "insert into car values (null,'" + carBean.getDriverid() + "'," +
-                "'" + carBean.getKind() + "','" + carBean.getNumber() + "')";
+        String sql = "insert into car values (null,'" + carBean.getDriverid() + "','" + carBean.getCompanyid() + "','" + carBean.getKind() + "'" +
+                ",'" + carBean.getNumber() + "')";
         DBUtil dbUtil = new DBUtil("ndt");
         dbUtil.update(sql);
         dbUtil.close();

@@ -15,10 +15,6 @@
 <form method="post" action="AddEmployee" id="form">
     <table border="1" id="table">
         <tr>
-            <td>公司编号</td>
-            <td><input type="text" name="companyid"></td>
-        </tr>
-        <tr>
             <td>员工姓名</td>
             <td><input type="text" name="name"></td>
         </tr>

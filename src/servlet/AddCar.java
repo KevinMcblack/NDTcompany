@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -19,10 +20,13 @@ public class AddCar extends HttpServlet {
         response.setCharacterEncoding("GBK");
         PrintWriter out = response.getWriter();
         request.setCharacterEncoding("UTF-8");
+        HttpSession session = request.getSession();
+        int compnayid= (int) session.getAttribute("companyid");
         int driverid=Integer.parseInt(request.getParameter("driverid"));
         String kind=request.getParameter("kind");
         String number =request.getParameter("number");
         CarBean carBean=new CarBean();
+        carBean.setCompanyid(compnayid);
         carBean.setKind(kind);
         carBean.setNumber(number);
         carBean.setDriverid(driverid);

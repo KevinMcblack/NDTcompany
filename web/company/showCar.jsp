@@ -18,7 +18,8 @@
 </head>
 <body>
 <%
-    ArrayList<CarBean> arrayList = new CompanyDAO().getAllCar();
+    System.out.println(session.getAttribute("companyid"));
+    ArrayList<CarBean> arrayList = new CompanyDAO().getCompanyCar((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
 <table border="1" id="table">
@@ -39,7 +40,7 @@
                 <td><input type="text" name="number" value="${ly.number}" size="10"></td>
                 <td><input type="submit" value="修改">
                     <input type="button"
-                           onclick="window.location.href('DeleteCar?id=${ly.carid}')"
+                           onclick="window.location.href='DeleteCar?id=${ly.carid}'"
                            value="删除">
                 </td>
                 <td><input type="reset" value="重置"></td>

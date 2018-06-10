@@ -15,7 +15,7 @@ public class EditUser extends HttpServlet {
         response.setHeader("content-type", "text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
-        String id=request.getSession().getAttribute("id").toString();
+        String id=request.getSession().getAttribute("userid").toString();
         String username = request.getParameter("username");
         sql=sql+"username='"+username+"'";
         String password = request.getParameter("password");
