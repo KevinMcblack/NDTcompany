@@ -69,15 +69,8 @@ public class OrderDAO {
         }
     }
 
-    public ArrayList<OrderBean> selectUserOrder(int userid) {
+    public ArrayList<OrderBean> selectAllOrder(String sql){
         dbUtil = new DBUtil("ndt");
-        String sql = "select * from `order` where userid=" + userid;
-        return init(sql);
-    }
-
-    public ArrayList<OrderBean> selectCompanyOrder(int companyid) {
-        dbUtil = new DBUtil("ndt");
-        String sql = "select * from `order` where companyid=" + companyid;
         return init(sql);
     }
 

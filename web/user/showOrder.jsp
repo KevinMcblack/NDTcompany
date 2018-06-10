@@ -116,7 +116,7 @@
                style="display: none" id="finish">
         <input type="button"
                onclick="window.location.href='../evaluation/addEvaluation.jsp?orderid=${b.orderId}&companyid=${b.companyID}'"
-               value="确认收货" style="display: none" id="evaluation"><br><br>
+               value="评价" style="display: none" id="evaluation"><br><br>
         <input type="button" onclick="window.location='showOrder.jsp?page=${page-1}'" value="上一单" id="left">
         <input type="button" onclick="window.location='showOrder.jsp?page=${page+1}'" value="下一单" id="right">
         当前第${page+1}页，总共${sessionScope.res.size()}页<input type="text" id="goto" title="" style="width: 50px">&nbsp;&nbsp;<input type="button" onclick="goTo()" value="跳转">

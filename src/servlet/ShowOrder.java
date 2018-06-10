@@ -21,10 +21,15 @@ public class ShowOrder extends HttpServlet {
         OrderDAO dao = new OrderDAO();
         HttpSession session = request.getSession();
         ArrayList<OrderBean> res;
+
         if (session.getAttribute("companyid") == null) {
-            res = dao.selectUserOrder((int)session.getAttribute("userid"));
+            String id = session.getAttribute("userid").toString();
+            String sql = "select * from `order` where userid=" + id;
+            res = dao.selectAllOrder(sql);
         } else {
-            res = dao.selectCompanyOrder((int)session.getAttribute("companyid"));
+            String id = session.getAttribute("companyid").toString();
+            String sql = "select * from `order` where companyid=" + id;
+            res = dao.selectAllOrder(sql);
         }
         int page;
         if (session.getAttribute("page") == null) {
