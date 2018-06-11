@@ -27,6 +27,7 @@
         <th>时间</th>
         <th>标题</th>
         <th>评论内容</th>
+        <th>评论图片</th>
         <th>操作</th>
     </tr>
     <c:forEach items="${arrayList}" var="ly">
@@ -41,7 +42,7 @@
                 <td><input type="text" name="content" value="${ly.content}" size="30"></td>
                 <td><input type="text" name="photo1" value="${ly.photo1}" size="10"></td>
                 <td><input type="button"
-                           onclick="window.location.href('DeleteEvaluation?id=${ly.evaluationId}')"
+                           onclick="window.location.href='DeleteEvaluation?id=${ly.evaluationId}'"
                            value="删除"></td>
             </tr>
         </form>

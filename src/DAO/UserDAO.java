@@ -57,4 +57,11 @@ public class UserDAO {
         }
         return arrayList;
     }
+
+    public void deleteUser(UserBean userBean){
+        String sql = "delete from user where userid = '"+userBean.getUserId()+"'";
+        DBUtil dbUtil = new DBUtil("ndt");
+        dbUtil.update(sql);
+        dbUtil.close();
+    }
 }

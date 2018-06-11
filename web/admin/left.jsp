@@ -88,7 +88,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
-																	    <a href='<%=path %>/evaluation/showEvaluation.jsp' target='I2'>修改个人密码</a>
+																	    <a href='<%=path %>/evaluation/showEvaluation.jsp' target='I2'>评价管理</a>
 																	</span>
 																</td>
 															</tr>
@@ -108,7 +108,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
-																	    <a href='<%=path %>/admin/middel.jsp' target='I2'>个人用户管理</a>
+																	    <a href='<%=path %>/admin/showgongsi.jsp' target='I2'>物流公司管理</a>
 																	</span>
 																</td>
 															</tr>
@@ -128,7 +128,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
-																	    <a href='<%=path %>/gongsiMana_daishenhe.action' target='I2'>待审运输公司</a>
+																	    <a href='<%=path %>/user/order/showOrder2.jsp' target='I2'>订单管理</a>
 																	</span>
 																</td>
 															</tr>
@@ -148,7 +148,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
 																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
 																	<span class="STYLE2">
-																	    <a href='<%=path %>/gongsiMana_yishenhe.action' target='I2'>已核运输公司</a>
+																	    <a href='<%=path %>/user/showUser.jsp' target='I2'>用户管理</a>
 																	</span>
 																</td>
 															</tr>
