@@ -25,7 +25,7 @@ public class DeleteOrder extends HttpServlet {
         OrderDAO dao = new OrderDAO();
         dao.updateOrder(sql);
         request.getSession().setAttribute("page",0);
+        response.sendRedirect("../ShowOrder");
         response.getWriter().print("<script>alert('删除订单成功');</script>");
-//        request.getRequestDispatcher("/ShowOrder").forward(request, response);
     }
 }

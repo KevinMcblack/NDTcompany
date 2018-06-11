@@ -14,7 +14,7 @@ import java.util.Date;
 
 public class EditOrder extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doGet(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,6 +23,7 @@ public class EditOrder extends HttpServlet {
         request.setCharacterEncoding("UTF-8");
         HttpSession session = request.getSession();
         String kind = session.getAttribute("kind").toString();
+
         String id = request.getParameter("id");//获取订单id
         System.out.println("修改order" + id);
         System.out.println("code = "+request.getParameter("code"));
@@ -30,9 +31,9 @@ public class EditOrder extends HttpServlet {
 
         OrderDAO dao = new OrderDAO();
         System.out.println("enter servlet");
+        String page = request.getParameter("page");
         if (kind.equals("user")) {
             if (code == 1) {
-                String page = request.getParameter("page");
                 String destination = request.getParameter("destination");
                 String amount = request.getParameter("amount");
                 String size = request.getParameter("itemSize");
@@ -48,6 +49,8 @@ public class EditOrder extends HttpServlet {
                 String status = "已完成";
                 String sql = "update `order` set status = '" + status + "' where orderid='" + id + "'";
                 dao.updateOrder(sql);
+                session.setAttribute("page", page);
+                response.sendRedirect("../ShowOrder");
                 response.getWriter().print("<script>alert('确认收货成功');</script>");
             }
         } else {
@@ -71,5 +74,28 @@ public class EditOrder extends HttpServlet {
 
             }
         }
+//        response.setHeader("content-type", "text/html;charset=UTF-8");
+//        response.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
+//        int code = Integer.parseInt(request.getParameter("code"));
+//        OrderDAO dao = new OrderDAO();
+//        String id = request.getParameter("id");//获取订单id
+//        if (code == 1) {
+//            String status = "已发货";
+//            String carid = request.getParameter("carid");
+//            String price = request.getParameter("price");
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+//            String deliveryTime = format.format(new Date());
+//            String sql = "update `order` set status = '" + status + "',carid='" + carid + "',price='" + price + "',deliverytime='" + deliveryTime + "' where orderid='" + id + "'";
+//            dao.updateOrder(sql);
+//            response.getWriter().print("<script>alert('发货成功');</script>");
+//        } else if (code == 2) {
+//                String status = "已送达";
+//                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+//                String finishtime = format.format(new Date());
+//                String sql = "update `order` set status = '" + status + "',finishtime='" + finishtime + "' where orderid='" + id + "'";
+//                dao.updateOrder(sql);
+//            response.getWriter().print("<script>alert('送达成功');</script>");
+//        }
     }
 }
