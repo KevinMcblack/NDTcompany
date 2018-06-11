@@ -34,7 +34,7 @@ public class Registered extends HttpServlet {
             UserDAO dao = new UserDAO();
             UserBean bean = dao.queryUser(sql);
             if (bean!=null){
-                response.getWriter().print("<script>alert('用户用户名已存在');window.location='register.jsp'</script>");
+                response.getWriter().print("<script>alert('用户用户名已存在');history.go(-1);</script>");
                 return;
             }
             sql = "insert into user (loginname,secret,username,phone,email) values('"+loginname+"','"+password+"','"+name+"','"+phone+"','"+email+"')";
@@ -45,7 +45,7 @@ public class Registered extends HttpServlet {
             CompanyDAO dao = new CompanyDAO();
             CompanyBean bean = dao.getCompany(sql);
             if (bean!=null){
-                response.getWriter().print("<script>alert('公司用户名已存在');window.location='register.jsp'</script>");
+                response.getWriter().print("<script>alert('公司用户名已存在');history.go(-1);</script>");
                 return;
             }
             sql = "insert into company (loginname,secret,companyname,phone,email) values('"+loginname+"','"+password+"','"+name+"','"+phone+"','"+email+"')";

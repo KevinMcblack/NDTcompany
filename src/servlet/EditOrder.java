@@ -14,6 +14,10 @@ import java.util.Date;
 
 public class EditOrder extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+    }
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("content-type", "text/html;charset=UTF-8");
         response.setCharacterEncoding("UTF-8");
         request.setCharacterEncoding("UTF-8");
@@ -44,7 +48,7 @@ public class EditOrder extends HttpServlet {
                 dao.updateOrder(sql);
                 response.getWriter().print("<script>alert('确认收货成功');</script>");
             }
-        }/* else {
+        } else {
             if (code == 1) {
                 String status = "已发货";
                 String carid = request.getParameter("carid");
@@ -55,41 +59,38 @@ public class EditOrder extends HttpServlet {
                 dao.updateOrder(sql);
                 response.getWriter().print("<script>alert('发货成功');</script>");
             } else if (code == 2) {
-               *//* String status = "已送达";
-                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-                String finishtime = format.format(new Date());
-                String sql = "update `order` set status = '" + status + "',finishtime='" + finishtime + "' where orderid='" + id + "'";
-                dao.updateOrder(sql);*//*
-                response.getWriter().print("<script>alert('送达成功');</script>");
-            } else if (code == 3) {
-
-            }
-        }*/
-    }
-
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        response.setHeader("content-type", "text/html;charset=UTF-8");
-        response.setCharacterEncoding("UTF-8");
-        request.setCharacterEncoding("UTF-8");
-        int code = Integer.parseInt(request.getParameter("code"));
-        OrderDAO dao = new OrderDAO();
-        String id = request.getParameter("id");//获取订单id
-        if (code == 1) {
-            String status = "已发货";
-            String carid = request.getParameter("carid");
-            String price = request.getParameter("price");
-            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
-            String deliveryTime = format.format(new Date());
-            String sql = "update `order` set status = '" + status + "',carid='" + carid + "',price='" + price + "',deliverytime='" + deliveryTime + "' where orderid='" + id + "'";
-            dao.updateOrder(sql);
-            response.getWriter().print("<script>alert('发货成功');</script>");
-        } else if (code == 2) {
                 String status = "已送达";
                 SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
                 String finishtime = format.format(new Date());
                 String sql = "update `order` set status = '" + status + "',finishtime='" + finishtime + "' where orderid='" + id + "'";
                 dao.updateOrder(sql);
-            response.getWriter().print("<script>alert('送达成功');</script>");
+                response.getWriter().print("<script>alert('送达成功');</script>");
+            } else if (code == 3) {
+
+            }
         }
+//        response.setHeader("content-type", "text/html;charset=UTF-8");
+//        response.setCharacterEncoding("UTF-8");
+//        request.setCharacterEncoding("UTF-8");
+//        int code = Integer.parseInt(request.getParameter("code"));
+//        OrderDAO dao = new OrderDAO();
+//        String id = request.getParameter("id");//获取订单id
+//        if (code == 1) {
+//            String status = "已发货";
+//            String carid = request.getParameter("carid");
+//            String price = request.getParameter("price");
+//            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+//            String deliveryTime = format.format(new Date());
+//            String sql = "update `order` set status = '" + status + "',carid='" + carid + "',price='" + price + "',deliverytime='" + deliveryTime + "' where orderid='" + id + "'";
+//            dao.updateOrder(sql);
+//            response.getWriter().print("<script>alert('发货成功');</script>");
+//        } else if (code == 2) {
+//                String status = "已送达";
+//                SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH-mm-ss");
+//                String finishtime = format.format(new Date());
+//                String sql = "update `order` set status = '" + status + "',finishtime='" + finishtime + "' where orderid='" + id + "'";
+//                dao.updateOrder(sql);
+//            response.getWriter().print("<script>alert('送达成功');</script>");
+//        }
     }
 }
