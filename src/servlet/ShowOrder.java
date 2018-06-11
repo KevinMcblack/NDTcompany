@@ -27,7 +27,7 @@ public class ShowOrder extends HttpServlet {
             String sql = "select * from `order` where userid=" + id;
             res = dao.selectAllOrder(sql);
         } else {
-            String id = session.getAttribute("companyid").toString();
+            int id = (int) session.getAttribute("companyid");
             String sql = "select * from `order` where companyid=" + id;
             res = dao.selectAllOrder(sql);
         }
