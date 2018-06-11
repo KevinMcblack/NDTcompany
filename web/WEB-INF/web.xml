@@ -72,4 +72,13 @@
         <servlet-name>ShowUser</servlet-name>
         <url-pattern>/ShowUser</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>Registered</servlet-name>
+        <servlet-class>servlet.Registered</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Registered</servlet-name>
+        <url-pattern>/Registered</url-pattern>
+    </servlet-mapping>
 </web-app>

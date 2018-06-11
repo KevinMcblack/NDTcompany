@@ -9,11 +9,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class CompanyDAO {
-    public CompanyBean getCompany(int companyId) {
+    private CompanyBean init(ResultSet rs){
         CompanyBean companyBean = new CompanyBean();
-        String sql = "select * from company where companyid='" + companyId + "'";
-        DBUtil dbUtil = new DBUtil("ndt");
-        ResultSet rs = dbUtil.query(sql);
         try {
             if (rs.next()) {
                 int companyid = rs.getInt("companyid");
@@ -36,6 +33,18 @@ public class CompanyDAO {
             e.printStackTrace();
             return null;
         }
+    }
+    public void updateCompany(String sql){
+        DBUtil dbUtil;
+        dbUtil = new DBUtil("ndt");
+        dbUtil.update(sql);
+        dbUtil.close();
+    }
+    public CompanyBean getCompany(int companyId) {
+        String sql = "select * from company where companyid='" + companyId + "'";
+        DBUtil dbUtil = new DBUtil("ndt");
+        ResultSet rs = dbUtil.query(sql);
+        return init(rs);
     }
 
     public ArrayList<CompanyBean> getAllCompany() {
@@ -97,6 +106,11 @@ public class CompanyDAO {
         return arrayList;
     }
 
+    public CompanyBean getCompany(String sql){
+        DBUtil dbUtil = new DBUtil("ndt");
+        ResultSet rs = dbUtil.query(sql);
+       return init(rs);
+    }
     public ArrayList<CarBean> getCompanyCar(int companyid) {
         String sql = "select * from car where companyid=" + companyid;
         DBUtil dbUtil = new DBUtil("ndt");

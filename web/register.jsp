@@ -13,21 +13,21 @@
         <div class="login">
             <div class="login__check"></div>
             <div class="login__form">
-                <form action="" method="post">
+                <form action="Registered" method="post">
                     <div class="login__row">
-                        <input type="text" class="login__input" placeholder="loginname"/>
+                        <input type="text" class="login__input" placeholder="loginname" name="loginname"/>
                     </div>
                     <div class="login__row">
-                        <input type="password" class="login__input" placeholder="Password"/>
+                        <input type="password" class="login__input" placeholder="Password" name="password"/>
                     </div>
                     <div class="login__row">
-                        <input type="text" class="login__input" placeholder="name"/>
+                        <input type="text" class="login__input" placeholder="name" name="name"/>
                     </div>
                     <div class="login__row">
-                        <input type="text" class="login__input" placeholder="phone"/>
+                        <input type="text" class="login__input" placeholder="phone" name="phone"/>
                     </div>
                     <div class="login__row">
-                        <input type="text" class="login__input" placeholder="Email"/>
+                        <input type="text" class="login__input" placeholder="Email" name="email"/>
                     </div>
                     <br>
                     <input name="kind" type="radio" value="user"/>用户&nbsp;
