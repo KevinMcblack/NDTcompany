@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+
+import DAO.OrderDAO;
 import com.jspsmart.upload.*;
 import JavaBean.EvaluationBean;
 import DAO.EvaluationDAO;
@@ -34,14 +36,16 @@ public class AddEvaluation extends HttpServlet {
             */
 
             int userid = Integer.parseInt(up.getRequest().getParameter("userid"));
-            int companyid = Integer.parseInt(up.getRequest().getParameter("userid"));
-            int orderid = Integer.parseInt(up.getRequest().getParameter("userid"));
+            int companyid = Integer.parseInt(up.getRequest().getParameter("companyid"));
+            int orderid = Integer.parseInt(up.getRequest().getParameter("orderid"));
 
             String title = up.getRequest().getParameter("title");
             String content = up.getRequest().getParameter("content");
             String photo1 = up.getFiles().getFile(0).getFileName();
 
-
+            String sql="update `order` set status='已评价' where orderid='"+orderid+"'";
+            OrderDAO dao = new OrderDAO();
+            dao.updateOrder(sql);
             EvaluationBean evaluationBean = new EvaluationBean();
             evaluationBean.setUserId(userid);
             evaluationBean.setCompanyId(companyid);

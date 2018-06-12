@@ -1,7 +1,9 @@
 <%@ page import="JavaBean.OrderBean" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="JavaBean.CompanyBean" %>
-<%@ page import="DAO.CompanyDAO" %><%--
+<%@ page import="DAO.CompanyDAO" %>
+<%@ page import="JavaBean.EvaluationBean" %>
+<%@ page import="DAO.EvaluationDAO" %><%--
   Created by IntelliJ IDEA.
   User: Verge_C
   Date: 2018/6/2
@@ -32,6 +34,8 @@
         request.setAttribute("res", res);
         request.setAttribute("page", p);
         request.setAttribute("price", bean.getPrice());
+        EvaluationBean evaluationBean;
+        evaluationBean = new EvaluationDAO().getEvaluation("select * from evaluation where orderid = '"+bean.getOrderId()+"' ");
         CompanyDAO dao = new CompanyDAO();
         CompanyBean companyBean = dao.getCompany(bean.getCompanyID());
         String companyName = companyBean.getCompanyname();
@@ -44,6 +48,7 @@
             bean.setFinishtime("进行中");
         }
         request.setAttribute("b", bean);
+        request.setAttribute("e",evaluationBean);
 %>
 <div id="show">
     <div id="info">
@@ -107,6 +112,10 @@
                     <td>订单状态</td>
                     <td><input type="text" name="status" title="" value="${b.status}" readonly="readonly"></td>
                 </tr>
+                <tr id="evaluation1">
+                    <td>评价</td>
+                    <td><textarea>${e.content}</textarea></td>
+                </tr>
             </table>
             <input type="submit" value="提交" style="display: none" id="submit">
         </form>
@@ -155,6 +164,12 @@
 </script>
 <script>
     var status = "${b.status}";
+    if(status!="已评价"){
+        var evaluation1=document.getElementById("evaluation1");
+        evaluation1.style.display="none";
+        <%--evaluation=document.getElementById("evaluationtxt");--%>
+        <%--evaluation1.value="${e.content}";--%>
+    }
     if (status == "已送达") {
         var submit = document.getElementById("finish");
         submit.style.display = "inline";

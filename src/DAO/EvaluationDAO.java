@@ -1,6 +1,7 @@
 package DAO;
 
 import JavaBean.EvaluationBean;
+import sun.security.pkcs11.Secmod;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,14 +11,18 @@ public class EvaluationDAO {
     private EvaluationBean addBean(ResultSet rs) {
         EvaluationBean evaluationBean = new EvaluationBean();
         try {
-            evaluationBean.setEvaluationId(rs.getInt("evaluationId"));
-            evaluationBean.setUserId(rs.getInt("userId"));
-            evaluationBean.setCompanyId(rs.getInt("companyId"));
-            evaluationBean.setOrderId(rs.getInt("orderId"));
-            evaluationBean.setTime(rs.getDate("time"));
-            evaluationBean.setTitle(rs.getString("title"));
-            evaluationBean.setContent(rs.getString("content"));
-            evaluationBean.setPhoto1(rs.getString("photo1"));
+            if(rs.next()){
+                evaluationBean.setEvaluationId(rs.getInt("evaluationId"));
+                evaluationBean.setUserId(rs.getInt("userId"));
+                evaluationBean.setCompanyId(rs.getInt("companyId"));
+                evaluationBean.setOrderId(rs.getInt("orderId"));
+                evaluationBean.setTime(rs.getDate("time"));
+                evaluationBean.setTitle(rs.getString("title"));
+                evaluationBean.setContent(rs.getString("content"));
+                evaluationBean.setPhoto1(rs.getString("photo1"));
+            }else {
+                return null;
+            }
             return evaluationBean;
         } catch (SQLException e) {
             e.printStackTrace();
@@ -25,6 +30,11 @@ public class EvaluationDAO {
         }
     }
 
+    public EvaluationBean getEvaluation(String sql){
+        DBUtil dbUtil = new DBUtil("ndt");
+        ResultSet resultSet=dbUtil.query(sql);
+        return addBean(resultSet);
+    }
     /*
     遍历查询结果集到ArrayList中
      */
