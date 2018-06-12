@@ -37,7 +37,7 @@
                 <li><a href="">我的物流</a></li>
                 <li class="news"><a href="">消息</a></li>
                 <li><a href="">网站地图</a></li>
-                <li><a href="">帮助与支持</a></li>
+                <li><a href="help.jsp">帮助与支持</a></li>
                 <li><a href="about.html">关于哪都通</a></li>
             </ul>
         </div>

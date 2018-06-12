@@ -27,12 +27,11 @@ public class EditOrder extends HttpServlet {
         System.out.println("修改order" + id);
         System.out.println("code = "+request.getParameter("code"));
         int code = Integer.parseInt(request.getParameter("code"));
-
         OrderDAO dao = new OrderDAO();
         System.out.println("enter servlet");
+        String page = request.getParameter("page");
         if (kind.equals("user")) {
             if (code == 1) {
-                String page = request.getParameter("page");
                 String destination = request.getParameter("destination");
                 String amount = request.getParameter("amount");
                 String size = request.getParameter("itemSize");
@@ -42,13 +41,13 @@ public class EditOrder extends HttpServlet {
                         "availableTime='" + availableTime + "',availableTime1='" + availableTime1 + "' where orderid='" + id + "'";
                 dao.updateOrder(sql);
                 session.setAttribute("page", page);
-                response.getWriter().print("<script>alert('修改订单成功');</script>");
-                request.getRequestDispatcher("/ShowOrder").forward(request, response);
+                response.getWriter().print("<script>window.location.href='../ShowOrder';alert('修改订单成功');</script>");
             } else if (code == 2) {
                 String status = "已完成";
                 String sql = "update `order` set status = '" + status + "' where orderid='" + id + "'";
                 dao.updateOrder(sql);
-                response.getWriter().print("<script>alert('确认收货成功');</script>");
+                session.setAttribute("page", page);
+                response.getWriter().print("<script>window.location.href='../ShowOrder';alert('确认收货成功');</script>");
             }
         } else {
             if (code == 1) {
