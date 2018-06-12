@@ -13,18 +13,16 @@
 </head>
 <body>
 <%-- 获取session中的用户id和companyid，orderid，进行强制转换 --%>
-<%--
 <%
-    int userid = (int) session.getAttribute("id");
+    int userid = (int) session.getAttribute("userid");
     int companyid = Integer.parseInt(request.getParameter("companyid"));
     int orderid = Integer.parseInt(request.getParameter("orderid"));
 %>
---%>
 <%-- 提交评价表单，id信息隐藏不会显示 --%>
 <form method="post" action="AddEvaluation" enctype="multipart/form-data">
-    <input type="hidden" name="userid" value=${id}>
-    <input type="hidden" name="companyid" value=${companyid}>
-    <input type="hidden" name="orderid" value=${orderid}>
+    <input type="hidden" name="userid" value="<%=userid%>">
+    <input type="hidden" name="companyid" value="<%=companyid%>">
+    <input type="hidden" name="orderid" value="<%=orderid%>">
     <table border="1">
         <tr><td>评论标题</td><td><input type="text" name="title"></td></tr>
         <tr><td>评论内容</td><td><textarea name="content" cols="30" rows="4"></textarea></td></tr>

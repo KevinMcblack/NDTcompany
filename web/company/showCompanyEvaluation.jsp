@@ -1,10 +1,11 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="JavaBean.EvaluationBean" %>
-<%@ page import="DAO.EvaluationDAO" %><%--
+<%@ page import="DAO.EvaluationDAO" %>
+<%--
   Created by IntelliJ IDEA.
   User: machenike
-  Date: 2018/6/6 0006
-  Time: 8:01
+  Date: 2018/6/12 0012
+  Time: 18:34
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -15,7 +16,8 @@
 </head>
 <body>
 <%
-    ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getAllEvaluation();
+    int companyid = Integer.parseInt(request.getParameter("companyid"));
+    ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getCompanyEvaluation("select * from evaluation where companyid="+companyid);
     request.setAttribute("arrayList", arrayList);
 %>
 <table border="1" align="center" style="text-align:center">

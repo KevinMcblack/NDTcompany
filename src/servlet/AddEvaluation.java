@@ -12,7 +12,7 @@ import JavaBean.EvaluationBean;
 import DAO.EvaluationDAO;
 
 
-@WebServlet(name = "AddEvaluation")
+@WebServlet("/evaluation/AddEvaluation")
 public class AddEvaluation extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setHeader("content-type", "text/html;charset=UTF-8");
@@ -23,16 +23,24 @@ public class AddEvaluation extends HttpServlet {
         up.initialize(getServletConfig(),request,response);
 
         try {
+            String path = request.getSession().getServletContext().getRealPath("up_img");
             up.upload();
-
-            up.save("/upimg");
+            up.save(path);
             //存数据库
+            /*
+            String userid = up.getRequest().getParameter("userid");
+            String companyid = up.getRequest().getParameter("companyid");
+            dString orderid = up.getRequest().getParameter("orderid");
+            */
+
             int userid = Integer.parseInt(up.getRequest().getParameter("userid"));
             int companyid = Integer.parseInt(up.getRequest().getParameter("userid"));
             int orderid = Integer.parseInt(up.getRequest().getParameter("userid"));
+
             String title = up.getRequest().getParameter("title");
             String content = up.getRequest().getParameter("content");
             String photo1 = up.getFiles().getFile(0).getFileName();
+
 
             EvaluationBean evaluationBean = new EvaluationBean();
             evaluationBean.setUserId(userid);
@@ -44,6 +52,7 @@ public class AddEvaluation extends HttpServlet {
             EvaluationDAO evaluationDAO=new EvaluationDAO();
             evaluationDAO.insertEvaluation(evaluationBean);
             out.print("保存完成");
+
         } catch (SmartUploadException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();		}

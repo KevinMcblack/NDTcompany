@@ -16,7 +16,7 @@
 </head>
 <body>
 <%
-    ArrayList<OrderBean> arrayList = new OrderDAO().selectAllOrder();
+    ArrayList<OrderBean> arrayList = new OrderDAO().selectAllOrder("select * from `order`");
     request.setAttribute("arrayList", arrayList);
 %>
 <table border="1" align="center" style="text-align:center">
@@ -39,14 +39,14 @@
     <c:forEach items="${arrayList}" var="ly">
         <form>
             <tr>
-                <td><input type="text" name="OrderId" value="${ly.orderId}" size="10" readOnly="true"></td>
+                <td><input type="text" name="OrderId" value="${ly.orderId}" size="5" readOnly="true"></td>
                 <td><input type="text" name="userId" value="${ly.userId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="companyId" value="${ly.companyID}" size="10" readOnly="true"></td>
                 <td><input type="text" name="departure" value="${ly.departure}" size="10" readOnly="true"></td>
                 <td><input type="text" name="destination" value="${ly.destination}" size="10" readOnly="true"></td>
                 <td><input type="text" name="time" value="${ly.time}" size="10"></td>
                 <td><input type="text" name="deliveryTime" value="${ly.deliveryTime}" size="10"></td>
-                <td><input type="text" name="amount" value="${ly.amount}" size="10"></td>
+                <td><input type="text" name="amount" value="${ly.amount}" size="5"></td>
                 <td><input type="text" name="itemSize" value="${ly.itemSize}" size="10"></td>
                 <td><input type="text" name="price" value="${ly.price}" size="10"></td>
                 <td><input type="text" name="status" value="${ly.status}" size="10"></td>
