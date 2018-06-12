@@ -27,6 +27,8 @@ public class CompanyDAO {
                 companyBean.setAddress(address);
                 companyBean.setPhone(phone);
                 companyBean.setEmail(email);
+            } else {
+                return null;
             }
             return companyBean;
         } catch (SQLException e) {
