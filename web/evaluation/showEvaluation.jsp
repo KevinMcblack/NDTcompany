@@ -9,8 +9,10 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
+
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <title>Title</title>
 </head>
 <body>
@@ -18,7 +20,7 @@
     ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getAllEvaluation();
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" align="center" style="text-align:center">
+<table border="1" align="center" style="text-align:center"  id="table">
     <tr>
         <th>评价编号</th>
         <th>用户编号</th>
