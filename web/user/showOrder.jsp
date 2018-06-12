@@ -112,7 +112,7 @@
         </form>
         <input type="button" onclick="editable()" value="修改订单">
         <input type="button" onclick="deleteable()" value="删除订单">
-        <input type="button" onclick="window.location.href='EditOrder?id=${b.orderId}&code=2'" value="确认收货"
+        <input type="button" onclick="window.location.href='EditOrder?id=${b.orderId}&code=2&page=${page}'" value="确认收货"
                style="display: none" id="finish">
         <input type="button"
                onclick="window.location.href='../evaluation/addEvaluation.jsp?orderid=${b.orderId}&companyid=${b.companyID}'"

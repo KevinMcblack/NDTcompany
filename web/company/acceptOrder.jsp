@@ -22,7 +22,7 @@
     int id=Integer.parseInt(request.getParameter("id"));
     int code=Integer.parseInt(request.getParameter("code"));
 %>
-<form id="form" method="post" action="EditOrder?id=<%=id%>&code=<%=code%>">
+<form id="form" method="post" action="EditOrder?code=1&id=<%=id%>">
     <h2>请选择运输车辆</h2>
     <select name="carid" title="">
         <% for (CarBean bean : res) {%>
@@ -39,7 +39,7 @@
     </select>
     <h2>请输入价格</h2>
     <input name="price" type="text" title="">
-    <input type="submit" value="完成">
+    <input type="submit" value="修改">
 </form>
 </body>
 </html>

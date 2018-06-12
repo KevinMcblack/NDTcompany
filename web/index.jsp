@@ -1,4 +1,10 @@
+<%@ page import="java.util.ArrayList" %>
+<%@ page import="JavaBean.OrderBean" %>
+<%@ page import="DAO.OrderDAO" %>
+<%@ page import="JavaBean.CompanyBean" %>
+<%@ page import="DAO.CompanyDAO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
     <title>哪都通物流有限公司</title>
@@ -72,6 +78,12 @@
     <!--盒子1-->
     <div class="space_hx">&nbsp;</div>
     <div class="space_hx">&nbsp;</div>
+    <%
+        ArrayList<OrderBean> arrayList=new OrderDAO().selectAllOrder("select * from `order` order by time desc");
+        request.setAttribute("arrayList",arrayList);
+        ArrayList<CompanyBean> arrayList1=new CompanyDAO().getAllCompany();
+        request.setAttribute("arrayList1",arrayList1);
+    %>
     <!--盒子3-->
     <div class="box_3 clearfix">
         <div class="box_3_l">
@@ -80,62 +92,16 @@
                 <a href=""><img src="img/index/more.png"/></a>
             </div>
             <ul>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
-                <li>
-                    <a href="">
-                        <span>东莞</span>
-                        <img src="img/index/icon15.png"/>
-                        <span>重庆</span>
-                    </a>
-                    <em>2014-04-13</em>
-                </li>
+                <c:forEach items="${arrayList}" var="ly">
+                    <li>
+                        <a href="">
+                            <span>${ly.departure}</span>
+                            <img src="img/index/icon15.png"/>
+                            <span>${ly.destination}</span>
+                        </a>
+                        <em>${ly.time}</em>
+                    </li>
+                </c:forEach>
             </ul>
         </div>
         <div class="box_3_r">
@@ -146,34 +112,14 @@
             <!--开始-->
             <div class="box16 clearfix">
                 <ul>
+                    <c:forEach items="${arrayList1}" var="ly">
                     <li>
-                        <span><a href="">2014清明节发货通知</a></span>
-                        <em>2014-04-15</em>
+                        <a href="">
+                        <span>${ly.companyname} 联系电话：${ly.phone}</span>
+                        </a>
+                        <em>${ly.address}</em>
                     </li>
-                    <li>
-                        <span><a href="">2014年外请合同车</a></span>
-                        <em>2014-04-15</em>
-                    </li>
-                    <li>
-                        <span><a href="">开展“打造和谐团队”主题培训</a></span>
-                        <em>2014-04-15</em>
-                    </li>
-                    <li>
-                        <span><a href="">召开2014年全网汽运工作会</a></span>
-                        <em>2014-04-15</em>
-                    </li>
-                    <li>
-                        <span><a href="">中国快递协会及各省（市）快递协会</a></span>
-                        <em>2014-04-15</em>
-                    </li>
-                    <li>
-                        <span><a href="">召开2014年全网汽运工作会</a></span>
-                        <em>2014-04-15</em>
-                    </li>
-                    <li>
-                        <span><a href="">开展“打造和谐团队”主题开展“打造和谐团队”主题</a></span>
-                        <em>2014-04-15</em>
-                    </li>
+                    </c:forEach>
                 </ul>
             </div>
             <!--结束-->

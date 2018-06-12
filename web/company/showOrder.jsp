@@ -16,30 +16,30 @@
 </head>
 <body>
 <%
-    if(session.getAttribute("res")!=null){
+    if (session.getAttribute("res") != null) {
         int p = Integer.parseInt(request.getParameter("page"));
-        ArrayList res =(ArrayList)session.getAttribute("res");
+        ArrayList res = (ArrayList) session.getAttribute("res");
         OrderBean bean;
-        if(p<res.size()){
-            bean = (OrderBean)res.get(p);
+        if (p < res.size()) {
+            bean = (OrderBean) res.get(p);
         } else {
             bean = null;
         }
-        request.setAttribute("res",res);
-        request.setAttribute("page",p);
-        request.setAttribute("price",bean.getPrice());
+        request.setAttribute("res", res);
+        request.setAttribute("page", p);
+        request.setAttribute("price", bean.getPrice());
         CompanyDAO dao = new CompanyDAO();
         CompanyBean companyBean = dao.getCompany(bean.getCompanyID());
         String companyName = companyBean.getCompanyname();
-        request.setAttribute("companyName",companyName);
-        if(bean.getStatus().equals("等待收件")){
+        request.setAttribute("companyName", companyName);
+        if (bean.getStatus().equals("等待收件")) {
             bean.setDeliveryTime("尚未收件");
             bean.setFinishtime("尚未发货");
-            request.setAttribute("price","尚未收件");
-        } else if(bean.getStatus().equals("已发货")){
+            request.setAttribute("price", "尚未收件");
+        } else if (bean.getStatus().equals("已发货")) {
             bean.setFinishtime("进行中");
         }
-        request.setAttribute("b",bean);
+        request.setAttribute("b", bean);
 %>
 <div id="show">
     <div id="info">
@@ -51,15 +51,18 @@
                 </tr>
                 <tr>
                     <td>接单公司</td>
-                    <td><input type="text" id="companyname" name="companyname" title="" value="${companyName}" readonly="readonly"></td>
+                    <td><input type="text" id="companyname" name="companyname" title="" value="${companyName}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>出发地</td>
-                    <td><input type="text" id="departure" name="departure" title="" value="${b.departure}" readonly="readonly"></td>
+                    <td><input type="text" id="departure" name="departure" title="" value="${b.departure}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>目的地</td>
-                    <td><input type="text" id="destination" name="destination" title="" value="${b.destination}" readonly="readonly"></td>
+                    <td><input type="text" id="destination" name="destination" title="" value="${b.destination}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>创建时间</td>
@@ -67,24 +70,30 @@
                 </tr>
                 <tr>
                     <td>发货时间</td>
-                    <td><input type="text" id="deliveryTime" name="deliveryTime" title="" value="${b.deliveryTime}" readonly="readonly"></td>
+                    <td><input type="text" id="deliveryTime" name="deliveryTime" title="" value="${b.deliveryTime}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>完成时间</td>
-                    <td><input type="text" id="finishtime" name="finishtime" title="" value="${b.finishtime}" readonly="readonly"></td>
+                    <td><input type="text" id="finishtime" name="finishtime" title="" value="${b.finishtime}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>货物数量</td>
-                    <td><input type="text" id="amount" name="amount" title="" value="${b.amount}" readonly="readonly"></td>
+                    <td><input type="text" id="amount" name="amount" title="" value="${b.amount}" readonly="readonly">
+                    </td>
                 </tr>
                 <tr>
                     <td>货物重量</td>
-                    <td><input type="text" id="itemSize" name="itemSize" title="" value="${b.itemSize}" readonly="readonly"></td>
+                    <td><input type="text" id="itemSize" name="itemSize" title="" value="${b.itemSize}"
+                               readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>期望取件时间</td>
-                    <td><input type="text" id="availableTime" name="availableTime" title="" value="${b.availableTime}" readonly="readonly">
-                        ~<input type="text" id="availableTime1" name="availableTime1" title="" value="${b.availableTime1}" readonly="readonly"></td>
+                    <td><input type="text" id="availableTime" name="availableTime" title="" value="${b.availableTime}"
+                               readonly="readonly">
+                        ~<input type="text" id="availableTime1" name="availableTime1" title=""
+                                value="${b.availableTime1}" readonly="readonly"></td>
                 </tr>
                 <tr>
                     <td>订单价格</td>
@@ -101,47 +110,49 @@
         <input type="button" onclick="deliveried()" value="订单送达">
         <input type="button" onclick="window.location='showOrder.jsp?page=${page-1}'" value="上一单" id="left">
         <input type="button" onclick="window.location='showOrder.jsp?page=${page+1}'" value="下一单" id="right">
+        当前第${page+1}页，总共${sessionScope.res.size()}页<input type="text" id="goto" title="" style="width: 50px">&nbsp;&nbsp;<input type="button" onclick="goTo()" value="跳转">
     </div>
 </div>
 <script>
+    function goTo() {
+        var p = document.getElementById("goto");
+        var txt = p.value;
+        txt=txt-1;
+        window.location="showOrder.jsp?page="+txt+"";
+    }
     function acceptOrder() {
         var status = "${b.status}";
-
         if (status == "等待收件") {
             location.href = "acceptOrder.jsp?id=${b.orderId}&code=1";
         } else {
-            alert('包裹已发货，无法再接受订单');
+            alert('包裹未处于可接受订单状态！');
         }
     }
+
     function deliveried() {
         var status = "${b.status}";
-        alert(status);
         if (status == "已发货") {
-            window.location.href='EditOrder?id=${b.orderId}&code=2';
+            location.href = 'EditOrder?id=${b.orderId}&code=2';
         } else {
-            alert('包裹已送达，无法再送达订单');
+            alert('包裹未处于可送达状态！');
         }
     }
 </script>
 <script>
-    var status="${b.status}";
-    if(status=="已送达"){
-        var submit = document.getElementById("finish");
-        submit.style.display="inline";
-    }
+    var status = "${b.status}";
     if (!${page}) {
-        var left=document.getElementById("left");
-        left.style.display="none";
+        var left = document.getElementById("left");
+        left.style.display = "none";
     }
-    var size=parseFloat("${res.size()}");
-    var page=parseFloat("${page}");
-    if(page==size-1) {
+    var size = parseFloat("${res.size()}");
+    var page = parseFloat("${page}");
+    if (page == size - 1) {
         var right = document.getElementById("right");
         right.style.display = "none";
     }
 </script>
 <%
-    } else{
+    } else {
         out.print("<script>alert('查看订单失败');window.close();</script>");
         //response.sendRedirect("about:blank");
     }

@@ -7,7 +7,7 @@
 </head>
 <body>
 <div id="big">
-    <img src="img/index/redlogo.png"/>
+    <img src="img/index/background.jpg" width="1402px"/>
     <div id="container">
         <div id="nav">
             <span>运输公司信息管理</span><br/>
