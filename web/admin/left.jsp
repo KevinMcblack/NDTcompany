@@ -13,47 +13,16 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <base href="<%=basePath%>">
     
     <title>My JSP 'left.jsp' starting page</title>
-    
-	<meta http-equiv="pragma" content="no-cache">
-	<meta http-equiv="cache-control" content="no-cache">
-	<meta http-equiv="expires" content="0">    
-	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="This is my page">
-	<!--
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	-->
+
 	<style type="text/css">
-		<!--
-		body {
-			margin-left: 0px;
-			margin-top: 0px;
-			margin-right: 0px;
-			margin-bottom: 0px;
-		}
-		.STYLE1 {
-			color: #FFFFFF;
-			font-weight: bold;
-			font-size: 12px;
-		}
 		.STYLE2 {
 			font-size: 12px;
 			color: #03515d;
 		}
 		a:link {font-size:12px; text-decoration:none; color:#03515d;}
 		a:visited{font-size:12px; text-decoration:none; color:#03515d;}
-		-->
-	</style>
-	  <style >
-		  #frame {
-			  border: solid;
-			  float: left;
-			  margin-top: 100px;
-			  height: 1080px;
-		  }
 
 	  </style>
-	<link rel="StyleSheet" href="<%=path %>/css/dtree.css" type="text/css" />
-	<script type="text/javascript" src="<%=path %>/js/dtree.js"></script>
   </head>
   
   <body>
@@ -155,66 +124,6 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 														</table>
 													</td>
 												</tr>
-												<tr>
-													<td width="41" height="35">
-														<div align="center">
-															<img src="<%=path %>/img/left_1.gif" width="31" height="31">
-														</div>
-													</td>
-													<td width="89" height="35">
-														<table width="100%" border="0" cellspacing="0" cellpadding="0">
-															<tr>
-																<td height="23" style="cursor:hand"
-																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
-																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
-																	<span class="STYLE2">
-																	    <a href='<%=path %>/goodsMana.action' target='I2'>货物信息管理</a>
-																	</span>
-																</td>
-															</tr>
-														</table>
-													</td>
-												</tr>
-												<tr>
-													<td width="41" height="35">
-														<div align="center">
-															<img src="<%=path %>/img/left_1.gif" width="31" height="31">
-														</div>
-													</td>
-													<td width="89" height="35">
-														<table width="100%" border="0" cellspacing="0" cellpadding="0">
-															<tr>
-																<td height="23" style="cursor:hand"
-																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
-																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
-																	<span class="STYLE2">
-																	    <a href='<%=path %>/gonggaoMana.action' target='I2'>公告信息管理</a>
-																	</span>
-																</td>
-															</tr>
-														</table>
-													</td>
-												</tr>
-												<tr>
-													<td width="41" height="35">
-														<div align="center">
-															<img src="<%=path %>/img/left_1.gif" width="31" height="31">
-														</div>
-													</td>
-													<td width="89" height="35">
-														<table width="100%" border="0" cellspacing="0" cellpadding="0">
-															<tr>
-																<td height="23" style="cursor:hand"
-																	onMouseOver="this.style.borderStyle='solid';this.style.borderWidth='1';borderColor='#adb9c2'; "
-																	onmouseout="this.style.backgroundImage='url()';this.style.borderStyle='none'">
-																	<span class="STYLE2">
-																	    <a href='<%=path %>/liuyanMana.action' target='I2'>留言信息管理</a>
-																	</span>
-																</td>
-															</tr>
-														</table>
-													</td>
-												</tr>
 											</table>
 										</td>
 									</tr>
@@ -225,8 +134,5 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				</td>
 			</tr>
   </table>
-  <!--<div id="frame">
-	  <iframe class="s" name="I2" width="850px" height="1000px"></iframe>
-  </div>-->
   </body>
 </html>
