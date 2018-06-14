@@ -44,36 +44,36 @@ public class EvaluationDAO {
         ResultSet rs = dbUtil.query(sql);
         ArrayList<EvaluationBean> arrayList = new ArrayList<>();
 
-        addBean(rs,arrayList);
+        addBean(rs, arrayList);
         dbUtil.close();
         return arrayList;
     }
-    public ArrayList<EvaluationBean> getCompanyEvaluation(String id){
-        String sql="select * from evaluation where companyid="+id;
+
+    public ArrayList<EvaluationBean> getCompanyEvaluation(String id) {
+        String sql = "select * from evaluation where companyid=" + id;
 
         DBUtil dbUtil = new DBUtil("ndt");
         ResultSet rs = dbUtil.query(sql);
         ArrayList<EvaluationBean> arrayList = new ArrayList<>();
 
-        addBean(rs,arrayList);
+        addBean(rs, arrayList);
         dbUtil.close();
         return arrayList;
     }
 
-    public ArrayList<EvaluationBean> getUserEvaluation(String id){
-        String sql="select * from evaluation where userid="+id;
+    public ArrayList<EvaluationBean> getUserEvaluation(String id) {
+        String sql = "select * from evaluation where userid=" + id;
         DBUtil dbUtil = new DBUtil("ndt");
         ResultSet rs = dbUtil.query(sql);
         ArrayList<EvaluationBean> arrayList = new ArrayList<>();
 
-        addBean(rs,arrayList);
+        addBean(rs, arrayList);
         dbUtil.close();
         return arrayList;
     }
 
 
-
-    private  void addBean(ResultSet rs,ArrayList<EvaluationBean> arrayList){
+    private void addBean(ResultSet rs, ArrayList<EvaluationBean> arrayList) {
         try {
             while (rs.next()) {
                 EvaluationBean evaluationBean = addBean(rs);
@@ -83,6 +83,7 @@ public class EvaluationDAO {
             e.printStackTrace();
         }
     }
+
     /*
     删除评价
      */

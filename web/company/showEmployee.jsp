@@ -21,7 +21,7 @@
     ArrayList<EmployeeBean> arrayList = new CompanyDAO().getCompanyEmployee((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" id="table">
+<table border="1"  class="hoverTable" id="table">
     <tr>
         <th>员工编号</th>
         <th>员工姓名</th>
@@ -32,7 +32,7 @@
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form method="post" action="UpdateEmployee">
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="employeeid" value="${ly.employeeid}" size="10"></td>
                 <td><input type="text" name="name" value="${ly.name}" size="10"></td>
                 <td><input type="text" name="position" value="${ly.position}" size="10"></td>

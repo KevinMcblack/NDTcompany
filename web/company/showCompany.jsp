@@ -21,7 +21,7 @@
     CompanyBean arrayList = new CompanyDAO().getCompany((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" id="table">
+<table border="1" id="table" class="hoverTable">
     <tr>
         <th>公司编号</th>
         <th>登录名</th>
@@ -34,7 +34,7 @@
         <th>重置</th>
     </tr>
         <form method="post" action="UpdateCompany">
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="companyid" value="${arrayList.companyid}" size="10" readOnly="true"></td>
                 <td><input type="text" name="loginname" value="${arrayList.loginname}" size="10"></td>
                 <td><input type="text" name="secret" value="${arrayList.secret}" size="10"></td>
