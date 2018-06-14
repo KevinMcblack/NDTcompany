@@ -10,7 +10,7 @@ import java.io.PrintWriter;
 import  DAO.UserDAO;
 import JavaBean.UserBean;
 
-@WebServlet(name = "DeleteUser")
+@WebServlet("/user/DeleteUser")
 public class DeleteUser extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -27,9 +27,7 @@ public class DeleteUser extends HttpServlet {
             userBean.setUserId(id);
             UserDAO dao1 = new UserDAO();
             dao1.deleteUser(userBean);
-
-            out.print("删除成功");
-            response.sendRedirect("/user/showUser.jsp");
+            out.print("<script>window.location.href='/user/showUser.jsp';alert('该信息删除成功！')</script>");
 
         }catch(Exception e){
         }

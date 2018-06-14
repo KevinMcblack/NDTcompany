@@ -20,7 +20,7 @@
     ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getAllEvaluation();
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" align="center" style="text-align:center"  id="table">
+<table class="hoverTable" id="table">
     <tr>
         <th>评价编号</th>
         <th>用户编号</th>
@@ -34,7 +34,7 @@
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form>
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="evaluationId" value="${ly.evaluationId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="userId" value="${ly.userId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="companyId" value="${ly.companyId}" size="10" readOnly="true"></td>

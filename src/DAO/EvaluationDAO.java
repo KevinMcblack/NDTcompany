@@ -8,18 +8,29 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class EvaluationDAO {
-    private EvaluationBean addBean(ResultSet rs) {
+    private EvaluationBean init(ResultSet rs){
         EvaluationBean evaluationBean = new EvaluationBean();
         try {
+            evaluationBean.setEvaluationId(rs.getInt("evaluationId"));
+            evaluationBean.setUserId(rs.getInt("userId"));
+            evaluationBean.setCompanyId(rs.getInt("companyId"));
+            evaluationBean.setOrderId(rs.getInt("orderId"));
+            evaluationBean.setTime(rs.getDate("time"));
+            evaluationBean.setTitle(rs.getString("title"));
+            evaluationBean.setContent(rs.getString("content"));
+            evaluationBean.setPhoto1(rs.getString("photo1"));
+            return evaluationBean;
+        } catch (SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
+    private EvaluationBean addBean(ResultSet rs) {
+        EvaluationBean evaluationBean;
+        try {
             if(rs.next()){
-                evaluationBean.setEvaluationId(rs.getInt("evaluationId"));
-                evaluationBean.setUserId(rs.getInt("userId"));
-                evaluationBean.setCompanyId(rs.getInt("companyId"));
-                evaluationBean.setOrderId(rs.getInt("orderId"));
-                evaluationBean.setTime(rs.getDate("time"));
-                evaluationBean.setTitle(rs.getString("title"));
-                evaluationBean.setContent(rs.getString("content"));
-                evaluationBean.setPhoto1(rs.getString("photo1"));
+                evaluationBean=init(rs);
             }else {
                 return null;
             }
@@ -76,7 +87,7 @@ public class EvaluationDAO {
     private void addBean(ResultSet rs, ArrayList<EvaluationBean> arrayList) {
         try {
             while (rs.next()) {
-                EvaluationBean evaluationBean = addBean(rs);
+                EvaluationBean evaluationBean = init(rs);
                 arrayList.add(evaluationBean);
             }
         } catch (SQLException e) {

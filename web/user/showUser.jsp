@@ -1,6 +1,7 @@
 <%@ page import="JavaBean.UserBean" %>
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="DAO.UserDAO" %>
+<%@ page import="java.sql.SQLException" %>
 <%--
   Created by IntelliJ IDEA.
   User: machenike
@@ -12,14 +13,20 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <title>Title</title>
 </head>
 <body>
 <%
-    ArrayList<UserBean> arrayList = new UserDAO().queryAllUser("select * from user");
+    ArrayList<UserBean> arrayList = null;
+    try {
+        arrayList = new UserDAO().queryAllUser("select * from user");
+    } catch (SQLException e) {
+        e.printStackTrace();
+    }
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" align="center" style="text-align:center">
+<table class="hoverTable" id="table">
     <tr>
         <th>用户编号</th>
         <th>用户登陆名</th>
@@ -31,7 +38,7 @@
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form>
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="userId" value="${ly.userId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="loginName" value="${ly.loginName}" size="10" readOnly="true"></td>
                 <td><input type="text" name="username" value="${ly.username}" size="10" readOnly="true"></td>

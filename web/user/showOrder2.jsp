@@ -12,6 +12,7 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <title>Title</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
     ArrayList<OrderBean> arrayList = new OrderDAO().selectAllOrder("select * from `order`");
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" align="center" style="text-align:center">
+<table id="table" class="hoverTable" >
     <tr>
         <th>订单编号</th>
         <th>用户编号</th>
@@ -38,7 +39,7 @@
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form>
-            <tr>
+            <tr  onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="OrderId" value="${ly.orderId}" size="5" readOnly="true"></td>
                 <td><input type="text" name="userId" value="${ly.userId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="companyId" value="${ly.companyID}" size="10" readOnly="true"></td>
@@ -53,7 +54,7 @@
                 <td><input type="text" name="availableTime" value="${ly.availableTime}" size="10"></td>
                 <td><input type="text" name="availableTime1" value="${ly.availableTime1}" size="10"></td>
                 <td><input type="button"
-                           onclick="window.location.href='DeleteOrder?id=${ly.orderId}'"
+                           onclick="window.location.href='DeleteOrder2?id=${ly.orderId}'"
                            value="删除"></td>
             </tr>
         </form>
