@@ -34,6 +34,7 @@ public class Login extends HttpServlet {
         try {
             ResultSet rs;
             if (kind.equals("user")) {
+                session.removeAttribute("companyid");
                 sql = "select secret,userid from user where loginname='" + username + "'";
                 rs = LoginDAO.login(sql);
                 if (rs.next()) {
@@ -50,6 +51,7 @@ public class Login extends HttpServlet {
                     response.getWriter().print("<script>alert('用户不存在，请先注册'));window.location='login.jsp'</script>");
                 }
             } else {
+                session.removeAttribute("userid");
                 sql = "select secret,companyid from company where loginname='" + username + "'";
                 rs = LoginDAO.login(sql);
                 if (rs.next()) {

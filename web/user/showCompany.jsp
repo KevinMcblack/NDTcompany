@@ -20,7 +20,7 @@
     ArrayList<CompanyBean> arrayList = new CompanyDAO().getAllCompany();
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" id="table">
+<table id="table" class="hoverTable">
     <tr>
         <th>公司编号</th>
         <th>登录名</th>

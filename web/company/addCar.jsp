@@ -14,7 +14,7 @@
 <body>
 
 <form method="post" action="AddCar" id="form">
-    <table border="1" id="table">
+    <table id="table" class="hoverTable">
         <tr>
             <td>司机编号</td>
             <td><input type="text" name="driverid"></td>

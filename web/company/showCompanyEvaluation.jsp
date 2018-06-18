@@ -12,15 +12,15 @@
 <%@ taglib uri="http://java.sun.com/jstl/core_rt" prefix="c" %>
 <html>
 <head>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
     <title>Title</title>
 </head>
 <body>
 <%
-    int companyid = Integer.parseInt(request.getParameter("companyid"));
-    ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getCompanyEvaluation("select * from evaluation where companyid="+companyid);
+    ArrayList<EvaluationBean> arrayList = new EvaluationDAO().getCompanyEvaluation((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" align="center" style="text-align:center">
+<table id="table" class="hoverTable">
     <tr>
         <th>评价编号</th>
         <th>用户编号</th>
@@ -30,11 +30,10 @@
         <th>标题</th>
         <th>评论内容</th>
         <th>评论图片</th>
-        <th>操作</th>
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form>
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="evaluationId" value="${ly.evaluationId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="userId" value="${ly.userId}" size="10" readOnly="true"></td>
                 <td><input type="text" name="companyId" value="${ly.companyId}" size="10" readOnly="true"></td>
@@ -43,9 +42,6 @@
                 <td style="size: 20px">${ly.title}</td>
                 <td>${ly.content}</td>
                 <td><img src="/up_img/${ly.photo1}" width="160" height="120"></td>
-                <td><input type="button"
-                           onclick="window.location.href='DeleteEvaluation?id=${ly.evaluationId}'"
-                           value="删除"></td>
             </tr>
         </form>
     </c:forEach>

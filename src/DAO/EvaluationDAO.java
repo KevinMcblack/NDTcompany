@@ -1,7 +1,6 @@
 package DAO;
 
 import JavaBean.EvaluationBean;
-import sun.security.pkcs11.Secmod;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -60,16 +59,14 @@ public class EvaluationDAO {
         return arrayList;
     }
 
-    public ArrayList<EvaluationBean> getCompanyEvaluation(String id) {
+    public ArrayList<EvaluationBean> getCompanyEvaluation(int id) {
         String sql = "select * from evaluation where companyid=" + id;
 
         DBUtil dbUtil = new DBUtil("ndt");
         ResultSet rs = dbUtil.query(sql);
         ArrayList<EvaluationBean> arrayList = new ArrayList<>();
 
-        addBean(rs, arrayList);
-        dbUtil.close();
-        return arrayList;
+        return addBean(rs, arrayList);
     }
 
     public ArrayList<EvaluationBean> getUserEvaluation(String id) {
@@ -84,7 +81,7 @@ public class EvaluationDAO {
     }
 
 
-    private void addBean(ResultSet rs, ArrayList<EvaluationBean> arrayList) {
+    private ArrayList<EvaluationBean> addBean(ResultSet rs, ArrayList<EvaluationBean> arrayList) {
         try {
             while (rs.next()) {
                 EvaluationBean evaluationBean = init(rs);
@@ -93,6 +90,7 @@ public class EvaluationDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        return arrayList;
     }
 
     /*

@@ -22,7 +22,7 @@
     ArrayList<CarBean> arrayList = new CompanyDAO().getCompanyCar((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" id="table">
+<table class="hoverTable" id="table">
     <tr>
         <th>车辆编号</th>
         <th>司机编号</th>
@@ -33,7 +33,7 @@
     </tr>
     <c:forEach items="${arrayList}" var="ly">
         <form method="post" action="UpdateCar">
-            <tr>
+            <tr onmouseover="this.style.backgroundColor='#ffff66';" onmouseout="this.style.backgroundColor='#d4e3e5';">
                 <td><input type="text" name="carid" value="${ly.carid}" size="10"></td>
                 <td><input type="text" name="driverid" value="${ly.driverid}" size="10"></td>
                 <td><input type="text" name="kind" value="${ly.kind}" size="10"></td>

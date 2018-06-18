@@ -21,7 +21,7 @@
     ArrayList<EmployeeBean> arrayList = new CompanyDAO().getCompanyEmployee((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1"  class="hoverTable" id="table">
+<table class="hoverTable" id="table">
     <tr>
         <th>员工编号</th>
         <th>员工姓名</th>

@@ -21,7 +21,7 @@
     CompanyBean arrayList = new CompanyDAO().getCompany((Integer) session.getAttribute("companyid"));
     request.setAttribute("arrayList", arrayList);
 %>
-<table border="1" id="table" class="hoverTable">
+<table id="table" class="hoverTable">
     <tr>
         <th>公司编号</th>
         <th>登录名</th>

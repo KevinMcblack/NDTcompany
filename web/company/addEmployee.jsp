@@ -13,7 +13,7 @@
 </head>
 <body>
 <form method="post" action="AddEmployee" id="form">
-    <table border="1" id="table">
+    <table id="table" class="hoverTable">
         <tr>
             <td>员工姓名</td>
             <td><input type="text" name="name"></td>

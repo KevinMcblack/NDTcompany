@@ -15,7 +15,7 @@
 <div id="show">
     <div id="info">
         <form action="EditUser" method="post" id="form">
-            <table id="table">
+            <table id="table" class="hoverTable">
                 <tr>
                     <td>用户名</td>
                     <td><input type="text" id="id" name="username" title="" value="${sessionScope.tempUserBean.loginName}" ></td>

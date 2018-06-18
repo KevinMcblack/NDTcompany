@@ -17,6 +17,7 @@
             <a href="company/showEmployee.jsp" target="in">查看修改和删除员工</a><br/>
             <a href="company/addEmployee.jsp" target="in">增加员工</a><br/>
             <a href="company/showCompany.jsp" target="in">查看和修改公司信息</a><br/>
+            <a href="company/showCompanyEvaluation.jsp" target="in">查看公司订单评价</a><br/>
         </div>
         <div id="frame">
             <iframe class="s" name="in" width="1200px" height="1000px"></iframe>

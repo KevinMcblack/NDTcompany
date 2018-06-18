@@ -53,7 +53,7 @@
 <div id="show">
     <div id="info">
         <form action="EditOrder?id=${b.orderId}&page=${page}&code=1" method="post" id="form">
-            <table id="table">
+            <table id="table" class="hoverTable">
                 <tr>
                     <td>编号</td>
                     <td><input type="text" id="id" name="id" title="" value="${b.orderId}" readonly="readonly"></td>
