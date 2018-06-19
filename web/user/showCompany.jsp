@@ -23,8 +23,6 @@
 <table id="table" class="hoverTable">
     <tr>
         <th>公司编号</th>
-        <th>登录名</th>
-        <th>密码</th>
         <th>公司名称</th>
         <th>地址</th>
         <th>电话</th>
@@ -33,13 +31,11 @@
     <c:forEach items="${arrayList}" var="ly">
         <form method="post" action="UpdateCompany">
             <tr>
-                <td><input type="text" name="companyid" value="${ly.companyid}" size="10" readOnly="true"></td>
-                <td><input type="text" name="loginname" value="${ly.loginname}" size="10"></td>
-                <td><input type="text" name="secret" value="${ly.secret}" size="10"></td>
-                <td><input type="text" name="companyname" value="${ly.companyname}" size="10" readOnly="true"></td>
-                <td><input type="text" name="address" value="${ly.address}" size="10"></td>
-                <td><input type="text" name="phone" value="${ly.phone}" size="10"></td>
-                <td><input type="text" name="email" value="${ly.email}" size="10"></td>
+                <td><input type="text" name="companyid" value="${ly.companyid}" readOnly="true"></td>
+                <td><input type="text" name="companyname" value="${ly.companyname}" readOnly="true"></td>
+                <td><input type="text" name="address" value="${ly.address}" readOnly="true"></td>
+                <td><input type="text" name="phone" value="${ly.phone}" readOnly="true"></td>
+                <td><input type="text" name="email" value="${ly.email}" readOnly="true"></td>
             </tr>
         </form>
     </c:forEach>

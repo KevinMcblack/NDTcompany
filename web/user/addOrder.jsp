@@ -20,21 +20,21 @@
 <div id="show">
     <div id="info">
         <form action="AddOrder" method="post" id="form">
-            <table id="table">
+            <table id="table" class="hoverTable">
                 <tr>
                     <td>出发地</td>
-                    <td><input type="text" id="departure" name="departure" title=""></td>
+                    <td><input type="text" id="departure" name="departure" title="" size="35"></td>
                 </tr>
                 <tr>
                     <td>目的地</td>
-                    <td><input type="text" id="destination" name="destination" title=""></td>
+                    <td><input type="text" id="destination" name="destination" title="" size="35"></td>
                 </tr>
                 <tr>
-                    <td>货物数量</td>
+                    <td>货物数量(件)</td>
                     <td><input type="text" name="amount" title=""></td>
                 </tr>
                 <tr>
-                    <td>货物重量</td>
+                    <td>货物重量(kg)</td>
                     <td><input type="text" name="itemSize" title=""></td>
                 </tr>
                 <tr>

@@ -92,7 +92,7 @@
 	position:relative;
 }
 .box_3_l ul li a{
-	font-size:16px;
+	font-size:13px;
 	color:#333;
 	margin-left:10px;
 }
@@ -103,6 +103,11 @@
 	height:30px;
 	line-height:30px;
 	vertical-align:middle;
+	width:100px;
+	word-break:keep-all;/* 不换行 */
+	white-space:nowrap;/* 不换行 */
+	overflow:hidden;/* 内容超出宽度时隐藏超出部分的内容 */
+	text-overflow:ellipsis;
 }
 .box_3_l ul li a:hover{
 	color:#045D97;
@@ -147,6 +152,7 @@
 	white-space:nowrap;
 	text-overflow:ellipsis;
 	margin-left:8px;
+	word-break:keep-all;/* 不换行 */
 }
 .box16 ul li span a {
 	font-size: 14px;

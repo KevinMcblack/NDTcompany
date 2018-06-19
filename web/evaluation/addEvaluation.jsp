@@ -10,6 +10,7 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../css/showInfo.css">
 </head>
 <body>
 <%-- 获取session中的用户id和companyid，orderid，进行强制转换 --%>
@@ -19,11 +20,11 @@
     int orderid = Integer.parseInt(request.getParameter("orderid"));
 %>
 <%-- 提交评价表单，id信息隐藏不会显示 --%>
-<form method="post" action="AddEvaluation" enctype="multipart/form-data">
+<form method="post" action="AddEvaluation" enctype="multipart/form-data" id="form">
     <input type="hidden" name="userid" value="<%=userid%>">
     <input type="hidden" name="companyid" value="<%=companyid%>">
     <input type="hidden" name="orderid" value="<%=orderid%>">
-    <table border="1">
+    <table class="hoverTable" id="table">
         <tr><td>评论标题</td><td><input type="text" name="title"></td></tr>
         <tr><td>评论内容</td><td><textarea name="content" cols="30" rows="4"></textarea></td></tr>
         <tr><td>上传照片</td><td><input type="file" name="photo1" size="23"></td></tr>
